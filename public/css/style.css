@@ -1,0 +1,191 @@
+*{
+  margin: 0;
+}
+#shadow-div{
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(rgba(0, 0, 0, 1), rgba(255, 255, 255, .01) 50%);
+}
+#shadow-div-login{
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(rgba(0, 0, 0, 1), rgba(255, 255, 255, .95) 50%);
+}
+nav h1{
+  color: white;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 37pt;
+  margin: 0;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  height: 24px;
+  line-height: 20px;
+}
+li {
+  display: inline-block;
+  color: red;
+  margin-top: 5px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  transition: .5s;
+  font-size: 15pt;
+  padding: 5px;
+  margin: 5px 0px;
+  font-family: 'Archivo Narrow', sans-serif;
+}
+a:hover {
+  text-decoration: none;
+  color: grey;
+  transition: .5s;
+}
+#source{
+  color: red;
+  text-align: center;
+}
+nav{
+  background-color: black;
+  text-align: center;
+  word-spacing: 10px;
+}
+#newsdiv{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+#news-img{
+  width: 300px;
+  height: 250px;
+}
+html{
+  background: rgba(0, 0, 0, .05);
+}
+#login-div{
+  display: flex;
+  justify-content: center;
+  background: white;
+}
+#login-label{
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 10pt;
+  color: lightgrey;
+  top: 218px;
+  position: relative;
+  left: -56px;
+}
+#login-div{
+  margin-top: 35px;
+  height: 400px;
+  width: 330px;
+  border-radius: 18px;
+  box-shadow: 2px 2px rgba(0, 0, 0, .2);
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 1px rgba(0, 0, 0, .1);
+}
+#login-div input{
+  position: relative;
+  top: 175px;
+  left: -56px;
+  height: 25px;
+  width: 200px;
+  margin-bottom: 10px;
+  font-size: 13pt;
+}
+#login-div button{
+  font-family: 'Archivo Narrow', sans-serif;
+  position: relative;
+  top: 234px;
+  left: -62px;
+  height: 30px;
+  width: 120px;
+  background: rgba(70, 136, 241, 1);
+  color: white;
+  font-size: 13pt;
+}
+#login-img{
+  height: 120px;
+  width: 120px;
+  position: relative;
+  left: 108px;
+  top: 30px;
+}
+input{
+  background: linear-gradient(to bottom, #f7f7f8 0%,#ffffff 100%);
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+}
+#sign-up{
+  position: relative;
+  color: blue;
+  text-decoration: underline;
+  top: 200px;
+  left: 105px;
+  font-size: 13px;
+}
+#signup-div{
+  margin-left: auto;
+  margin-right: auto;
+  height: 100vh;
+  width: 500px;
+  border-left: solid 1px rgba(0, 0, 0, .1);;
+  border-right: solid 1px rgba(0, 0, 0, .1);; 
+}
+#signup-div input{
+  position: relative;
+  top: -80px;
+  left: 61px;
+  height: 25px;
+  width: 200px;
+  margin-bottom: 13px;
+  font-size: 13pt;
+}
+#signup-label{
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 13pt;
+  color: lightgrey;
+  top: 174px;
+  position: relative;
+  left: 61px;
+  line-height: 44px;
+}
+#sign-up-h2{
+  font-family: 'Archivo Narrow', sans-serif;
+  top: 80px;
+  left: 230px;
+  font-size: 34px;
+  line-height: 40px;
+}
+#signup-select{
+  height: 20px;
+  width: 100px;
+  font-size: 12pt;
+  position: relative;
+  top: -24px;
+  left: -150px;
+}
+#signup-submit{
+  font-family: 'Archivo Narrow', sans-serif;
+  position: relative;
+  top: 100px;
+  left: -119px;
+  height: 30px;
+  width: 120px;
+  background: rgba(70, 136, 241, 1);
+  color: white;
+  font-size: 13pt;
+}
+#news-item-div{
+  height: 400px;
+  width: 250px;
+  border: solid 1px black;
+}
+#index-parent-div{
+
+}
+
+
+

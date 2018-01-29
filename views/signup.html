@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Newsington Log-in</title>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/script.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+</head>
+<body>
+  <nav>
+  <h1 id="nav">Newsington News </h1>
+    <div id="shadow-div"></div>
+</nav>
+<div id="signup-parent">
+  
+</div>
+<h2 id="sign-up-h2">sign up</h2>
+  <div id="signup-div">
+
+     
+    <form action="/newsington/users" method="POST" accept-charset="utf-8">
+     
+      <h4 id="signup-label" name="user[fname]">first name</h4>
+      <h4 id="signup-label" name="user[lname]">last name</h4>
+      <h4 id="signup-label" name="user[email]">email</h4>
+      <h4 id="signup-label" name="user[password]">password</h4><br/>
+       <h4 id="signup-label">choose favorite news source</h4>
+      <input type="text" ></input><br/>
+      <input type="text" ></input><br/>
+      <input type="text" ></input><br/>
+      <input type="password" ></input>
+    
+     <select id="signup-select" name="user[favorite_source]">
+     <option value="abc" name="user[favorite_source]">ABC</option>
+     <option value="2" name="user[favorite_source]">AP</option>
+     <option value="3" name="user[favorite_source]">BBC</option>
+     <option value="4" name="user[favorite_source]">Guardian</option>
+     <option value="4" name="user[favorite_source]">Google</option>
+    </select>
+      <button id="signup-submit" type="submit"> SUBMIT </button>
+    </form>
+    
+  </div>
+</div>  
+
+</body>
+</html>

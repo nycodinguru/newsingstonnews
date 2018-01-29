@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/script.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <h1 id="nav">Newsington News</h1>
+  <ul>
+    <li><a href=# title="">world</a></li>
+    <li><a href=# title="">tech</a></li>
+    <li><a href=# title="">business</a></li>
+  </ul>
+</nav>
+<div id="shadow-div"></div>
+
+
+<h1>latest news and stuff</h1>
+<div id="index-parent-div"
+<div id="news-item-div">
+{{ #data }}
+
+<h2>{{ title }}</h2>
+
+<div id="news-img" style="background: url('{{ urlToImage }}'); background-size: cover; background-position: center;">
+
+</div>
+
+<p>{{ description }}</p>
+
+{{ /data }}
+</div>
+
+</body>
+</html>
+
+
+
