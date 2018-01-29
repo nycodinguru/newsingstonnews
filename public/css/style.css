@@ -179,13 +179,25 @@ input{
   font-size: 13pt;
 }
 #news-item-div{
-  height: 400px;
-  width: 250px;
+  height: 406px;
+  width: 310px;
   border: solid 1px black;
 }
 #index-parent-div{
-
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
+h1 {
+  font-family: 'Archivo Narrow', sans-serif;
+}
+ h2 {
+  font-family: 'Archivo Narrow', sans-serif;
+}
+#title{
+  text-align: center;
+}
+
 
 
 

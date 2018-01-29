@@ -2,7 +2,8 @@
 const express = require("express");
 const router = express();
 const Fetcher = require("../models/fetcher.js");
-const authObject = require("../services/auth.js")
+const auth = require("../services/auth.js")
+const users = require("../models/newsapp.js");
 
 //Newsington Controllers
 
@@ -22,6 +23,10 @@ router.get("/signup", (req, res) => {
 router.get("/login", (req, res) => {
    res.render('login');
 });
+
+router.get("/:id", (req, res, next) => {
+  res.render('profile')
+})
 
 
 // //House Controllers

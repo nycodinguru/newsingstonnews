@@ -1,13 +1,11 @@
 const bcrypt = require('bcryptjs');
-
 const db = require('../models/setup');
-
 const userModelObject = {};
 
 // Note that this is NOT middleware!
 userModelObject.create = function create(user) {
     // This is where we obtain the hash of the user's password.
-    const passwordDigest = bcrypt.hashSync(user.password, 10);
+    const passwordDigest = bcrypt.hashSync(user.password, 1);
     // Generally we try to avoid passing promises around, but here 
     // LocalStrategy's interface means we can't just rely on next() 
     // to glide us to the next thing we want to do. So we'll return the callback.

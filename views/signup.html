@@ -21,15 +21,15 @@
      
     <form action="/newsington/users" method="POST" accept-charset="utf-8">
      
-      <h4 id="signup-label" name="user[fname]">first name</h4>
-      <h4 id="signup-label" name="user[lname]">last name</h4>
-      <h4 id="signup-label" name="user[email]">email</h4>
-      <h4 id="signup-label" name="user[password]">password</h4><br/>
+      <h4 id="signup-label" >first name</h4>
+      <h4 id="signup-label" >last name</h4>
+      <h4 id="signup-label" >email</h4>
+      <h4 id="signup-label" >password</h4><br/>
        <h4 id="signup-label">choose favorite news source</h4>
-      <input type="text" ></input><br/>
-      <input type="text" ></input><br/>
-      <input type="text" ></input><br/>
-      <input type="password" ></input>
+      <input type="text" name="user[fname]"></input><br/>
+      <input type="text" name="user[lname]"></input><br/>
+      <input type="text" name="user[email]"></input><br/>
+      <input type="password" name="user[password]"></input>
     
      <select id="signup-select" name="user[favorite_source]">
      <option value="abc" name="user[favorite_source]">ABC</option>

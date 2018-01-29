@@ -20,12 +20,12 @@
 <div id="shadow-div"></div>
 
 
-<h1>latest news and stuff</h1>
-<div id="index-parent-div"
+<h1 id="title">latest news and stuff</h1>
+<div id="index-parent-div">
 <div id="news-item-div">
 {{ #data }}
 
-<h2>{{ title }}</h2>
+<h3>{{ title }}</h3>
 
 <div id="news-img" style="background: url('{{ urlToImage }}'); background-size: cover; background-position: center;">
 
@@ -35,7 +35,7 @@
 
 {{ /data }}
 </div>
-
+</div>
 </body>
 </html>
 
