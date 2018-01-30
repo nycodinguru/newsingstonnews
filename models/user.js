@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-const db = require('../models/setup');
+const db = require('../db/index.js');
 const userModelObject = {};
 
 // Note that this is NOT middleware!
@@ -10,7 +10,7 @@ userModelObject.create = function create(user) {
     // LocalStrategy's interface means we can't just rely on next() 
     // to glide us to the next thing we want to do. So we'll return the callback.
     // To see how it's used, see passport.use('local-strategy', ...) in services/auth.js
-    // Anyway, here we make an entry in the database for the new user. We set the counter to 0 initially.
+    // Anyway, here we make an entry in the database for the new user.
     // We do NOT store the password in the database!
     // Instead we store the password digest, which is a salted hash of the password.
     // If someone grabs the password digest it won't tell them what the password is,
@@ -52,6 +52,31 @@ userModelObject.incrementUserCounter = function incrementUserCounter(req, res, n
         res.locals.counterData = counterData;
         next();
     }).catch(err => console.log('ERROR:', err));
+};
+
+userModelObject.update = function accountUpdate(req, res, next) {
+
+    const passwordDigest = bcrypt.hashSync(user.password, 1);
+
+    db
+        .one(
+            "UPDATE users SET fname = $1, lname = $2, password_digest = $3, favorite_source = $4 WHERE id = $5 RETURNING *;",
+            [
+                req.body.fname,
+                req.body.lname,
+                req.body.passwordDigest,
+                req.body.favorite_source,
+                req.body.id
+            ]
+        )
+        .then(data => {
+            res.locals.updatedUserData = data;
+            next();
+        })
+        .catch(error => {
+            console.log("error encountered in userModelObject.update. Error:", error);
+            next(error);
+        });
 };
 
 module.exports = userModelObject;

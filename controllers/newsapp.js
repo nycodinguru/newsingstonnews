@@ -4,6 +4,7 @@ const router = express();
 const Fetcher = require("../models/fetcher.js");
 const auth = require("../services/auth.js")
 const users = require("../models/newsapp.js");
+const userModelObject = require("../models/user.js")
 
 //Newsington Controllers
 
@@ -12,20 +13,14 @@ router.get("/", Fetcher.topNews, (req, res) => {
 res.render('index', {data: res.locals.data.articles});
 });
 
-router.get("/ap", Fetcher.ap, (req, res, next) => {
-  res.render('source', {data: res.locals.data});
+router.get("/business", Fetcher.business, (req, res) => {
+  // res.json(res.locals.allNewsData.articles);
+res.render('index', {data: res.locals.data.articles});
 });
 
-router.get("/signup", (req, res) => {
-   res.render('signup');
-});
-
-router.get("/login", (req, res) => {
-   res.render('login');
-});
-
-router.get("/:id", (req, res, next) => {
-  res.render('profile')
+router.get("/users/profile", userModelObject.findByEmailMiddleware, (req, res, next) => {
+  //res.json(res.locals.userData)
+  res.render('profile', {data: res.locals.userData, favorite: res.locals.userData.favorite_source})
 })
 
 

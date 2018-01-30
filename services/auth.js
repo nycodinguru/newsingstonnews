@@ -64,9 +64,8 @@ passport.use(
             passReqToCallback: true
         },
         // note the `done` parameter:
-        (req, fname, lname, email, password, favorite_source, done) => {
-            User
-                .create(req.body.user) // user .create returns a promise we can chain onto
+        (req, email, password, done) => {
+                User.create(req.body.user) // user .create returns a promise we can chain onto
                 .then((user) => {
                     // signals that we have successfully signed up
                     // the second argument will get further processed by passport.serializeUser

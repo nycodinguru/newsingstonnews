@@ -197,6 +197,16 @@ h1 {
 #title{
   text-align: center;
 }
+#update-label {
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 13pt;
+    color: lightgrey;
+    top: 129px;
+    position: relative;
+    left: 61px;
+    line-height: 44px;
+    width: 190px;
+}
 
 
 

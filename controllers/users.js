@@ -1,7 +1,6 @@
 const User = require('../models/user');
 const router = require('express').Router();
 const passport = require('passport');
-
 // const controller = require('./controller');
 const auth = require('../services/auth');
 
@@ -19,8 +18,8 @@ router.post(
         // we'll want to use to handle signup. We defined behavior for
         // 'local-signup' back in index.js.
         'local-signup', {
-            failureRedirect: '/newsington/login',
-            successRedirect: '/users/profile'
+        failureRedirect: '/newsington/users/login',
+        successRedirect: '/newsington/users/profile'
         }
     )
 );
@@ -28,8 +27,8 @@ router.post(
 // ----------------------------------------
 // register new user
 
-router.get('/new', (req, res) => {
-    res.render('users/new');
+router.get('/signup', (req, res) => {
+    res.render('signup');
 });
 
 // ----------------------------------------
@@ -39,14 +38,14 @@ router.get('/logout', (req, res) => {
     // passport put this method on req for us
     req.logout();
     // redirect back to index page
-    res.redirect('/');
+    res.redirect('/newsington');
 });
 
 // ----------------------------------------
 // user login
 
 router.get('/login', (req, res) => {
-    res.render('users/login');
+    res.render('login');
 });
 
 // passport.authenticate will _build_ middleware for us
@@ -54,11 +53,25 @@ router.get('/login', (req, res) => {
 // passport in auth.js
 router.post('/login', passport.authenticate(
     'local-login', {
-        failureRedirect: '/users/login',
-        successRedirect: '/users/profile'
+        failureRedirect: '/newsington/users/login',
+        successRedirect: '/newsington/users/profile'
     }
 ));
+// ----------------------------------------
+// update existing user
 
+router.get('/update', User.findByEmailMiddleware,  (req, res) => {
+    //res.json(res.locals.userData)
+     res.render('update', {data: res.locals.userData});
+});
+
+// ----------------------------------------
+
+router.put('/update', User.update,  (req, res) => {
+    console.log('yo')
+    //res.json(res.locals.userData)
+     res.render('profile', {data: res.locals.userData});
+});
 
 // ----------------------------------------
 // user profile

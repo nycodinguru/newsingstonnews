@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  console.log("script loaded")
+ 
+  
   // selecting edit form
   $('#signup-submit').submit(function(e){
     // preventing form from submitting
@@ -31,24 +32,22 @@ $(document).ready(function() {
   })
 
 
-  // delete button
-  $('#delete').click(function() {
+  // fetch news from favorite source
+  function fetch() {
     
     // selecting the beer's id from hidden input
-    const id = $('#beer-id').val();
-    console.log(`Deleting id: ${id}`);
+    const source = $('#news-source');
+    console.log(`fetching news from: ${source}`);
     
-    // Prompt user before deleting
-    const confirm = window.confirm('Are you sure you want to delete this?');
-    if(confirm) { // execute if user selects okay
+   
       $.ajax({
-        url: `/beers/${id}`, // Path
-        type: 'DELETE',
+        url: `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=a15bce4b34d143389058f96a45bb62b1`, // Path
+        type: 'GET',
         success: function(data) {
-          console.log('deleting ', data);
+          console.log(data);
           
           // redirect to beers list after deleting an individual beer
-          window.location.href = '/beers'; 
+          // window.location.href = '/beers'; 
         },
         error: function(xhr, status, error) {
           // add error handler
@@ -56,25 +55,32 @@ $(document).ready(function() {
       })
     }
 
-  })
-
-  // Selecting form that creates a new beer
-  $('#new-beer').submit(function(e) {
+   $('#update-form').submit(function(e){
+    // preventing form from submitting
     e.preventDefault();
 
+    // grabbing form data
     const data = $(this).serialize();
-    console.log('data ', data);
+    // selecting the beer's id from hidden input
+    const id = $('#id').val();
+    
+    console.log(`Form data: ${data}`)
+
+    // PUT request to /beer/:beerId to update an individual beer
     $.ajax({
-      url: '/beers',
+      url: '/users/update',
       data: data,
-      type: 'POST',
+      type: 'PUT',
       success: function(data) {
-        console.log('data received ', data)
-        window.location.href = `/beers/${data.id}`
-      },
+        console.log('response ', data)
+        // redirecting to the beer's show page on success
+        window.location.href = `/users/profile`;
+      }, 
       error: function(xhr, status, error) {
         // add error handler
       }
+
     })
+
   })
 });

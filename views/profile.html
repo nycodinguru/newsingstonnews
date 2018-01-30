@@ -2,9 +2,9 @@
 <html>
 <head>
   <title></title>
-  <script src="../public/js/jquery.js"></script>
-  <script src="../public/js/script.js"></script>
-  <link rel="stylesheet" type="text/css" href="../public/css/style.css" />
+  <script src="/js/jquery.js"></script>
+  <script src="/js/script.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/style.css" />
   <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
 
 
@@ -17,11 +17,16 @@
     <li><a href=# title="">world</a></li>
     <li><a href=# title="">tech</a></li>
     <li><a href=# title="">business</a></li>
+    <li><a href=/newsington/users/update title="">update profile</a></li>
+    <li><a href=/newsington/users/logout title="">logout</a></li>
   </ul>
 </nav>
+
 <div id="shadow-div"></div>
 
-<h1 id="source">latest news from {{ source }}</h1>
+
+<h1 id="source">latest news from {{ favorite }}</h1>
+<input id="news-source" type="hidden" value={{ favorite }}></input>
 
 {{ #data }}
 
@@ -31,13 +36,14 @@
   </div>
 <h2>{{ title }}</h2>
 
-<img src={{ urlToImage }}>
+<img src="{{ urlToImage }}">
 
 <p>{{ description }}</p>
 
 {{ /data }}
   <div>
 </div>
+
 
 
 

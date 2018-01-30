@@ -10,13 +10,14 @@
 <body>
   <nav>
   <h1 id="nav">Newsington News </h1>
-    <div id="shadow-div"></div>
+    <div id="shadow-div-login"></div>
 </nav>
 <div id="signup-parent">
   
 </div>
-<h2 id="sign-up-h2">sign up</h2>
+
   <div id="signup-div">
+    <h2 id="sign-up-h2">sign up</h2>
 
      
     <form action="/newsington/users" method="POST" accept-charset="utf-8">
@@ -32,11 +33,11 @@
       <input type="password" name="user[password]"></input>
     
      <select id="signup-select" name="user[favorite_source]">
-     <option value="abc" name="user[favorite_source]">ABC</option>
-     <option value="2" name="user[favorite_source]">AP</option>
-     <option value="3" name="user[favorite_source]">BBC</option>
-     <option value="4" name="user[favorite_source]">Guardian</option>
-     <option value="4" name="user[favorite_source]">Google</option>
+     <option value="abc-news">ABC</option>
+     <option value="associated-press">AP</option>
+     <option value="bbc-news" name="user[favorite_source]">BBC</option>
+     <option value="the-guardian-uk">Guardian</option>
+     <option value="google-news">Google</option>
     </select>
       <button id="signup-submit" type="submit"> SUBMIT </button>
     </form>

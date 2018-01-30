@@ -2,8 +2,8 @@
 <html id="login-html">
 <head>
   <title>Newsington Log-in</title>
-  <script src="../public/js/jquery.js"></script>
-  <script src="../public/js/script.js"></script>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/script.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
   <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
 </head>
@@ -17,11 +17,11 @@
 </div>
   <div id="login-div">
     <img id="login-img" src="/assets/user.png"><br>
-    <form action="submit" method="get" accept-charset="utf-8">
-      <h4 id="login-label"> user name</h4>
-      <input type="text" ></input>
+    <form action="/newsington/users/login" method="POST" accept-charset="utf-8">
+      <h4 id="login-label"> email</h4>
+      <input type="text" name="user[email]"></input>
       <h4 id="login-label"> password</h4>
-      <input type="password" "></input>
+      <input type="password" name="user[password]"></input>
       <a id="sign-up" href="">sign-up</a>
       <button type="submit"> LOG-IN </button>
     </form>
