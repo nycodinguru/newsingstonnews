@@ -15,12 +15,22 @@ res.render('index', {data: res.locals.data.articles});
 
 router.get("/business", Fetcher.business, (req, res) => {
   // res.json(res.locals.allNewsData.articles);
-res.render('index', {data: res.locals.data.articles});
+res.render('index', {data: res.locals.data.articles, category: 'business'});
+});
+
+router.get("/world", Fetcher.world, (req, res) => {
+  // res.json(res.locals.allNewsData.articles);
+res.render('index', {data: res.locals.data.articles, category: 'world'});
+});
+
+router.get("/tech", Fetcher.tech, (req, res) => {
+  // res.json(res.locals.allNewsData.articles);
+res.render('index', {data: res.locals.data.articles, category: 'tech'});
 });
 
 router.get("/users/profile", userModelObject.findByEmailMiddleware, (req, res, next) => {
   //res.json(res.locals.userData)
-  res.render('profile', {data: res.locals.userData, favorite: res.locals.userData.favorite_source})
+  res.render('profile', {data: res.locals.userData, favorite: res.locals.userData.favorite_source, fname: res.locals.userData.fname, lname: res.locals.userData.lname})
 })
 
 

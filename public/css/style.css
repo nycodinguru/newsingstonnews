@@ -57,7 +57,7 @@ nav{
   flex-direction: row;
 }
 #news-img{
-  width: 300px;
+  width: 100%;
   height: 250px;
 }
 html{
@@ -178,10 +178,13 @@ input{
   color: white;
   font-size: 13pt;
 }
-#news-item-div{
+.news-item-div{
   height: 406px;
   width: 310px;
-  border: solid 1px black;
+  border: solid 1px rgba(0,0,0,.5);
+  box-shadow: 2px 2px rgba(0,0,0,.2);
+  border-radius: 15px;
+  padding-bottom: 40px;
 }
 #index-parent-div{
   display: flex;
@@ -191,7 +194,7 @@ input{
 h1 {
   font-family: 'Archivo Narrow', sans-serif;
 }
- h2 {
+h2 {
   font-family: 'Archivo Narrow', sans-serif;
 }
 #title{
@@ -206,6 +209,24 @@ h1 {
     left: 61px;
     line-height: 44px;
     width: 190px;
+}
+#update-button{
+    top: 52px;
+    position: relative;
+}
+#favorite-source-update{
+    top: 52px;
+    position: relative;
+}
+#profile-picture{
+  background-image: url('../assets/5732879.png');
+  background-size: cover; 
+  background-position: center; 
+  height: 200px; 
+  width: 200px; 
+  border-radius: 150px;
+  margin-right: auto; 
+  margin-left: auto;
 }
 
 

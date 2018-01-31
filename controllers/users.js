@@ -86,17 +86,7 @@ router.get(
         console.log('in handler for users/profile');
         console.log('req.user:');
         console.log(req.user);
-        res.render('users/profile', { user: res.locals.userData });
-    }
-);
-
-router.post(
-    '/counter',
-    auth.restrict,
-    User.incrementUserCounter,
-    (req, res) => {
-        console.log('in post at /counter, req.user: ', req.user);
-        res.json(res.locals.counterData);
+        res.render('profile', { data: res.locals.userData });
     }
 );
 

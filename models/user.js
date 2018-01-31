@@ -56,7 +56,9 @@ userModelObject.incrementUserCounter = function incrementUserCounter(req, res, n
 
 userModelObject.update = function accountUpdate(req, res, next) {
 
-    const passwordDigest = bcrypt.hashSync(user.password, 1);
+    console.log(req.body)
+
+    const passwordDigest = bcrypt.hashSync(req.body.passwordDigest, 1);
 
     db
         .one(
@@ -64,7 +66,7 @@ userModelObject.update = function accountUpdate(req, res, next) {
             [
                 req.body.fname,
                 req.body.lname,
-                req.body.passwordDigest,
+                passwordDigest,
                 req.body.favorite_source,
                 req.body.id
             ]

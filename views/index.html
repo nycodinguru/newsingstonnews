@@ -7,14 +7,17 @@
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
   <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
 </head>
-<body>
+<body style="font-family: 'Archivo Narrow', sans-serif;">
+  
+</style>
 
 <nav>
   <h1 id="nav">Newsington News</h1>
   <ul>
-    <li><a href=# title="">world</a></li>
-    <li><a href=# title="">tech</a></li>
+    <li><a href="/newsington/world" title="">world</a></li>
+    <li><a href="/newsington/tech" title="">tech</a></li>
     <li><a href="/newsington/business" title="">business</a></li>
+    <li><a href="/newsington/users/profile" title="">profile</a></li>
   </ul>
 </nav>
 <div id="shadow-div"></div>
@@ -22,9 +25,9 @@
 
 <h1 id="title">latest news and stuff from {{category}}</h1>
 <div id="index-parent-div">
-<div id="news-item-div">
-{{ #data }}
 
+{{ #data }}
+<div class="news-item-div">
 <h3>{{ title }}</h3>
 
 <div id="news-img" style="background: url('{{ urlToImage }}'); background-size: cover; background-position: center;">
@@ -36,6 +39,29 @@
 {{ /data }}
 </div>
 </div>
+<script>
+  
+  var titles  = document.querySelectorAll('h3');
+  var newsDiv = document.querySelectorAll('div');
+  var descriptions = document.querySelectorAll('p');
+
+  // for (var i = 2; i < newsDiv.length; i++) {
+ 
+  //   newsDiv[i].className = "news-item-div"
+  // }
+
+   for (var r = 0; r < titles.length; r++) {
+ 
+    titles[r].style = "text-align: center; margin: 15px 0px 10px 0px;"
+  }
+
+  for (var w = 0; w < titles.length; w++) {
+ 
+    descriptions[w].style = "padding-top: 15px; padding-bottom: 5px; margin-bottom: 130px;"
+  }
+
+
+</script>
 </body>
 </html>
 
