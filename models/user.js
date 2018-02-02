@@ -81,4 +81,16 @@ userModelObject.update = function accountUpdate(req, res, next) {
         });
 };
 
+userModelObject.destroy = (req, res, next) => {
+    db
+        .one('DELETE FROM users WHERE id = $1', [req.user.id])
+        .then(() => {
+            next();
+        })
+        .catch(error => {
+            console.log('error encountered in userModelObject.destroy. error:', error);
+            next(error);
+        });
+};
+
 module.exports = userModelObject;

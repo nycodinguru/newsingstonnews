@@ -1,15 +1,17 @@
+@font-face
+{
+      font-family: OpenSans;
+      src: url('./fonts/OpenSans-Light.ttf');
+}
 *{
   margin: 0;
 }
-#shadow-div{
-  width: 100%;
-  height: 10px;
-  background: linear-gradient(rgba(0, 0, 0, 1), rgba(255, 255, 255, .01) 50%);
-}
-#shadow-div-login{
-  width: 100%;
-  height: 10px;
-  background: linear-gradient(rgba(0, 0, 0, 1), rgba(255, 255, 255, .95) 50%);
+#delete-link{
+  color: red;
+  position: absolute;
+  text-align: center;
+  bottom: 37px;
+  right: 365px;
 }
 nav h1{
   color: white;
@@ -22,6 +24,30 @@ ul{
   padding: 0;
   height: 24px;
   line-height: 20px;
+  padding-top: 60px;
+  padding-bottom: 8px;
+  box-shadow: 0 0 7px black;
+  display: inline-block;
+  width: 104vw;
+}
+#temp{
+  position: relative;
+  color: white;
+  font-weight: normal;
+  top: -70px;
+  text-align: right;
+  right: 67px;
+  font-size: 19pt;
+  font-family: 'OpenSans';
+}
+#city{
+  text-align: right;
+  color: white;
+  position: relative;
+  word-spacing: 1px;
+  top: -74px;
+  right: 56px;
+  font-family: 'Archivo Narrow', sans-serif;
 }
 li {
   display: inline-block;
@@ -36,6 +62,7 @@ a {
   padding: 5px;
   margin: 5px 0px;
   font-family: 'Archivo Narrow', sans-serif;
+  word-spacing: -1px;
 }
 a:hover {
   text-decoration: none;
@@ -43,13 +70,36 @@ a:hover {
   transition: .5s;
 }
 #source{
-  color: red;
   text-align: center;
+  font-size: 30pt;
+  margin: 34px;
+  font-style: italic;
+}
+#fetch-this{
+  color: white;
+  background: red;
+  padding: 10px;
 }
 nav{
   background-color: black;
   text-align: center;
   word-spacing: 10px;
+  top: 0;
+  width: 103vw;
+}
+#weather-icon{
+  height: 20px;
+  width: 25px;
+}
+#nav{
+  position: fixed;
+  display: inline-block;
+  background: black;
+  top: 0;
+  left: 0vw;
+  width: 100%;
+  box-shadow: 0 0 8px black;
+  padding-bottom: 7px;
 }
 #newsdiv{
   display: flex;
@@ -58,15 +108,11 @@ nav{
 }
 #news-img{
   width: 100%;
-  height: 250px;
+  height: 380px;
 }
 html{
-  background: rgba(0, 0, 0, .05);
-}
-#login-div{
-  display: flex;
-  justify-content: center;
-  background: white;
+  background: rgba(0, 0, 0, .098);
+  overflow-x: hidden;
 }
 #login-label{
   font-family: 'Archivo Narrow', sans-serif;
@@ -76,15 +122,29 @@ html{
   position: relative;
   left: -56px;
 }
+#login-header{
+  position: relative;
+  text-align: center;
+  top: 160px;
+  left: -56px;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-weight: normal;
+  font-size: 17pt;
+  margin-bottom: 13px;
+  margin-top: 12px;
+}
 #login-div{
-  margin-top: 35px;
-  height: 400px;
+  display: flex;
+  justify-content: center;
+  background: white;
+  height: 460px;
   width: 330px;
   border-radius: 18px;
-  box-shadow: 2px 2px rgba(0, 0, 0, .2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
   margin-left: auto;
   margin-right: auto;
   border: solid 1px rgba(0, 0, 0, .1);
+  margin-top: 18%;
 }
 #login-div input{
   position: relative;
@@ -92,14 +152,16 @@ html{
   left: -56px;
   height: 25px;
   width: 200px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: 13pt;
+  padding: 7px;
+  font-weight: bold;
 }
 #login-div button{
   font-family: 'Archivo Narrow', sans-serif;
   position: relative;
   top: 234px;
-  left: -62px;
+  left: -75px;
   height: 30px;
   width: 120px;
   background: rgba(70, 136, 241, 1);
@@ -114,64 +176,85 @@ html{
   top: 30px;
 }
 input{
-  background: linear-gradient(to bottom, #f7f7f8 0%,#ffffff 100%);
-  border-radius: 3px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset, 0 -1px 0 rgba(0,0,0,0.05) inset;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .3);
+  border: none;
+  border-radius: 7px;
 }
 #sign-up{
   position: relative;
   color: blue;
-  text-decoration: underline;
-  top: 200px;
-  left: 105px;
-  font-size: 13px;
+  top: 186px;
+  left: 19px;
+  cursor: pointer;
+  font-size: 19px;
+}
+#signup-input{
+  height: 25px;
+  width: 200px;
+  margin-bottom: 20px;
+  font-size: 13pt;
+  padding: 7px;
+  font-weight: bold;
 }
 #signup-div{
   margin-left: auto;
   margin-right: auto;
   height: 100vh;
   width: 500px;
-  border-left: solid 1px rgba(0, 0, 0, .1);;
-  border-right: solid 1px rgba(0, 0, 0, .1);; 
+  background: white;
+  box-shadow: 0 0 17px rgba(0, 0, 0, .5);
+  padding: 0 22px 0 22px;
+  margin-top: 0px;
+  z-index: -2; 
 }
 #signup-div input{
   position: relative;
-  top: -80px;
+  top: 70px;
   left: 61px;
   height: 25px;
   width: 200px;
   margin-bottom: 13px;
   font-size: 13pt;
+  margin: 12px;
 }
 #signup-label{
   font-family: 'Archivo Narrow', sans-serif;
   font-size: 13pt;
   color: lightgrey;
-  top: 174px;
+  top: 437px;
   position: relative;
   left: 61px;
   line-height: 44px;
 }
 #sign-up-h2{
   font-family: 'Archivo Narrow', sans-serif;
-  top: 80px;
-  left: 230px;
+  top: 5px;
+  left: 28px;
   font-size: 34px;
   line-height: 40px;
+  position: relative;
+}
+#sign-up-h3{
+  font-family: 'Archivo Narrow', sans-serif;
+  top: 66px;
+  left: 30px;
+  font-size: 34px;
+  line-height: 40px;
+  position: relative;
 }
 #signup-select{
   height: 20px;
   width: 100px;
   font-size: 12pt;
   position: relative;
-  top: -24px;
-  left: -150px;
+  top: 145px;
+  left: -167px;
 }
 #signup-submit{
   font-family: 'Archivo Narrow', sans-serif;
   position: relative;
-  top: 100px;
-  left: -119px;
+  top: 280px;
+  left: -150px;
   height: 30px;
   width: 120px;
   background: rgba(70, 136, 241, 1);
@@ -179,12 +262,10 @@ input{
   font-size: 13pt;
 }
 .news-item-div{
-  height: 406px;
-  width: 310px;
-  border: solid 1px rgba(0,0,0,.5);
-  box-shadow: 2px 2px rgba(0,0,0,.2);
+  height: 440px;
+  width: 100%;
   border-radius: 15px;
-  padding-bottom: 40px;
+  padding: 20px 0px 20px 0px;
 }
 #index-parent-div{
   display: flex;
@@ -199,20 +280,35 @@ h2 {
 }
 #title{
   text-align: center;
+  padding: 11px;
+  width: 100vw;
+  color: black;
+  margin: 20px auto 30px auto;
+  font-size: 7vw;
+  text-shadow: 0 0 3px rgba(0, 0, 0, .4);
+  margin-bottom: -6px;
 }
 #update-label {
-    font-family: 'Archivo Narrow', sans-serif;
-    font-size: 13pt;
-    color: lightgrey;
-    top: 129px;
-    position: relative;
-    left: 61px;
-    line-height: 44px;
-    width: 190px;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 13pt;
+  color: lightgrey;
+  top: 372px;
+  position: relative;
+  left: 61px;
+  line-height: 44px;
+  width: 190px;
 }
 #update-button{
-    top: 52px;
-    position: relative;
+  top: 229px;
+  position: relative;
+  font-family: 'Archivo Narrow', sans-serif;
+  position: relative;
+  left: 186px;
+  height: 30px;
+  width: 120px;
+  background: rgba(70, 136, 241, 1);
+  color: white;
+  font-size: 13pt;
 }
 #favorite-source-update{
     top: 52px;
@@ -222,13 +318,231 @@ h2 {
   background-image: url('../assets/5732879.png');
   background-size: cover; 
   background-position: center; 
-  height: 200px; 
-  width: 200px; 
+  height: 55px; 
+  width: 55px; 
   border-radius: 150px;
   margin-right: auto; 
   margin-left: auto;
+  display: inline-block;
+  top: 17px;
+  position: relative;
+  left: -10px;
+  z-index: -10;
 }
+#read-more{
+  color: white;
+  background: red;
+  font-size: 7pt;
+  padding: 3px;
+  transition: .5s;
+}
+#read-more:hover{
+  background-color: green;
+  transition: .5s;
+}
+#footer-header{
+  text-align: center;
+  line-height: 52px;
 
+}
+#footer{
+  position: relative;
+  top: 217%;
+  background: black;
+  color: white;
+  width: 100vw;
+  height: 180px;
+  box-shadow: 0 0 3px 0 black;
+}
+#footer-profile{
+  position: absolute;
+  bottom: -4706px;
+  background: black;
+  color: white;
+  width: 100vw;
+  height: 180px;
+  box-shadow: 0 0 3px 0 black;
+}
+#footer-profile-fakenews{
+  position: absolute;
+  bottom: -5574px;
+  background: black;
+  color: white;
+  width: 100vw;
+  height: 180px;
+  box-shadow: 0 0 3px 0 black;
+}
+#footer-links{
+  position: relative;
+  bottom: -828px;
+  display: inline-block;
+}
+#footer-links-profile{
+  position: relative;
+  bottom: -5051px;
+  display: inline-block;
+  left: 222px;
+  letter-spacing: 3px;
+  bottom: -5091px;
+}
+#footer-bottom-text{
+  position: relative;
+  text-align: center;
+  font-family: 'Archivo Narrow', sans-serif;
+  bottom: -886px;
+  font-size: 9pt;
+  color: white;
+}
+#footer-bottom-text-profile{
+  position: relative;
+  text-align: center;
+  font-family: 'Archivo Narrow', sans-serif;
+  bottom: -5104px;
+  font-size: 9pt;
+  color: white;
+}
+#footer-links ul{
+  height: 0px;
+  line-height: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  display: inline-block;
+  position: relative;
+  left: 600px;
+  top: -20px;
+  font-size: 7pt;
+}
+#footer-links li{
+  height: 0px;
+  line-height: 0px;
+  padding-top: 25px;
+  display: block;
+  color: red;
+  margin-top: 5px;
+  display: inline-block;
+  font-size: 11pt;
+  position: relative;
+  bottom: -33px;
+  left: 225px;
+  letter-spacing: 3px;
 
-
-
+}
+#footer-news-links ul{
+  height: 0px;
+  line-height: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  box-shadow: 0 0 7px black;
+  display: inline-block;
+  position: relative;
+  left: 3500px;
+  top: -20px;
+  font-size: 7pt;
+}
+#footer-news-links li{
+  height: 0px;
+  line-height: 0px;
+  padding-top: 25px;
+  display: block;
+  color: red;
+  margin-top: 5px;
+  display: list-item;
+  font-size: 11pt;
+}
+#footer-social-media{
+  width: 57px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+}
+#twitter{
+  background-image: url('../assets/twitter.png');
+  background-size: cover;
+  background-position: center;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  cursor: pointer;
+  transition: .5s;
+}
+#insta{
+  background-image: url('../assets/instagram.png');
+  background-size: cover;
+  background-position: center;
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  cursor: pointer;
+  transition: .5s;
+}
+#twitter:hover{
+  background-image: url('../assets/twitter2.png');
+  transition: .5s;
+}
+#insta:hover{
+  background-image: url('../assets/instagram2.png');
+  transition: .5s;
+}
+.bullets{
+  color: red;
+}
+#delete-button{
+  top: 229px;
+  position: relative;
+  font-family: 'Archivo Narrow', sans-serif;
+  position: relative;
+  left: 142px;
+  height: 30px;
+  width: 120px;
+  background: red;
+  color: white;
+  font-size: 13pt;
+}
+#delete-label{
+  text-align: center;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-size: 28pt;
+  color: red;
+  top: 75px;
+  position: relative;
+  left: 159px;
+  line-height: 37px;
+  width: 190px;
+}
+#checkBox{
+  position: relative;
+  top: 119px;
+  left: 229px;
+  height: 25px;
+  width: 20px;
+  margin-bottom: 13px;
+  font-size: 13pt;
+  margin: 12px;
+  transform: scale(2,2);
+  box-shadow: 0 0 rgba(0, 0, 0, 0); 
+  border: none;
+  border-radius: 7px;
+}
+#delete-div input{
+  position: relative;
+  top: 124px;
+  height: 25px;
+  width: 15px;
+  margin-bottom: 13px;
+  font-size: 13pt;
+  margin: 12px;
+}
+#delete-div{
+  margin-left: auto;
+  margin-right: auto;
+  height: 100vh;
+  width: 500px;
+  background: white;
+  box-shadow: 0 0 17px rgba(0, 0, 0, .5);
+  padding: 0 22px 0 22px;
+  margin-top: 0px;
+  z-index: -2; 
+}
+#delete-form-html{
+  overflow: hidden;
+}

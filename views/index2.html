@@ -3,6 +3,7 @@
 <head>
   <title>Newsington</title>
   <script src="/js/jquery.js"></script>
+  <script src="/js/sugar.js"></script>
   <script src="/js/script.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
   <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
@@ -22,11 +23,9 @@
     <li><a href="/newsington/tech" title="">tech</a></li>
     <li><a href="/newsington/business" title="">business</a></li>
     <li><a href="/newsington/fakenews" title="">fake news</a></li>
-    <li><a href="/newsington/users/profile" title="">profile</a></li>
-    <li><a href="/newsington/users/logout" title="">logout</a></li>
+    <li><a href="/newsington/users/login" title="">login</a></li>
   </ul><h4 id=temp>{{temp}}&#186;f</h4><h5 id="city"><image id="weather-icon" src={{imgurl}}>New York, NY</h5>
 </nav>
-
 
 
 <h1 id="title">latest news from {{category}}</h1>
@@ -70,24 +69,22 @@
 <script>
   
   var titles  = document.querySelectorAll('h3');
-  var newsDiv = document.querySelectorAll('.news-item-div');
+  var newsDiv = document.querySelectorAll('div');
   var descriptions = document.querySelectorAll('p');
 
   // for (var i = 2; i < newsDiv.length; i++) {
  
-  //   newsDiv[i].setAttribute("onmouseover","this.style='transform: scale(1.05);transition: .5s;'")
-
+  //   newsDiv[i].className = "news-item-div"
   // }
-  
 
    for (var r = 0; r < titles.length; r++) {
  
-    titles[r].style = "text-align: center; margin: 15px 0px 10px 0px; font-size: 4vw;background: black; color: white; padding: 8px; margin-bottom: 0px;"
+   titles[r].style = "text-align: center; margin: 15px 0px 10px 0px; font-size: 4vw;background: black; color: white; padding: 8px; margin-bottom: 0px;"
   }
 
   for (var w = 0; w < titles.length; w++) {
  
-    descriptions[w].style = "padding-top: 15px; padding-bottom: 5px; margin-bottom: 50px ;font-size: 16pt;"
+    descriptions[w].style = "padding-top: 15px; padding-bottom: 5px; margin-bottom: 50px;font-size: 16pt;"
   }
 
 

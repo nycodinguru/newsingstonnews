@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html id="form-html">
 <head>
-  <title>Newsington Log-in</title>
+  <title>Update Account</title>
   <script src="/js/jquery.js"></script>
   <script src="/js/script.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
@@ -9,29 +9,35 @@
 </head>
 <body>
   <nav>
-  <h1 id="nav">Newsington News </h1>
-    <div id="shadow-div-login"></div>
+  <h1 id="nav">Newsington News</h1>
+  <ul>
+    <li><a href="/newsington/topnews" title="">top news</a></li>
+    <li>
+    <li><a href="/newsington/us" title="">us</a></li>
+    <li><a href="/newsington/tech" title="">tech</a></li>
+    <li><a href="/newsington/business" title="">business</a></li>
+    <li><a href="/newsington/fakenews" title="">fake news</a></li>
+    <li><a href="/newsington/users/profile" title="">profile</a></li>
+    <li><a href="/newsington/users/logout" title="">logout</a></li>
+  </ul>
 </nav>
-<div id="signup-parent">
-  
-</div>
+
 
   <div id="signup-div">
     <h2 id="sign-up-h2">update profile</h2>
+    <a id="delete-link" href="/newsington/users/profile/delete">delete my account</a>
 
      
     <form id="update-form" action="" method="" accept-charset="utf-8">
       {{#data}}
      
-      <h4 id="update-label" >first name</h4>
-      <h4 id="update-label" >last name</h4>
-      <h4 id="update-label" >password</h4><br/>
+      
        <h4 id="update-label">choose favorite news source</h4>
-      <input type="text" id="fname" name="fname" value= {{fname}}></input><br/>
-      <input type="text" id="lname" name="lname" value= {{lname}}></input><br/>
-      <input type="password" id="passwordDigest" name="passwordDigest"></input>
+      <input type="text" id="signup-input" name="fname" value= {{fname}} placeholder="first name"></input><br/>
+      <input type="text" id="signup-input" name="lname" value= {{lname}} placeholder="last name"></input><br/>
+      <input type="password" id="signup-input" name="passwordDigest" placeholder="password"></input>
     
-     <select style="top: -30px; position: relative; left: -150px;" name="favorite_source">
+     <select style="top: 146px; position: relative; left: -180px; height: 25px; width: 100px; margin-bottom: 13px; font-size: 13pt; margin: 12px;" name="favorite_source">
      <option value="abc-news">ABC</option>
      <option value="associated-press">AP</option>
      <option value="bbc-news">BBC</option>
@@ -40,7 +46,7 @@
     </select><br/>
     <input id="update-button" type="hidden" id="id" name="id" value= {{id}}></input>
      {{/data}}
-      <input style="top: 82px;" type="submit" value="submit"></input>
+      <button id="update-button" type="submit" value="submit">UPDATE</button>
     </form>
     
   </div>

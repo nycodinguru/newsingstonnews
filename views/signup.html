@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html id="form-html">
 <head>
-  <title>Newsington Log-in</title>
+  <title>Sign-up</title>
   <script src="/js/jquery.js"></script>
   <script src="/js/script.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
@@ -10,36 +10,31 @@
 <body>
   <nav>
   <h1 id="nav">Newsington News </h1>
-    <div id="shadow-div-login"></div>
-</nav>
-<div id="signup-parent">
   
-</div>
+</nav>
+
 
   <div id="signup-div">
-    <h2 id="sign-up-h2">sign up</h2>
+    
 
      
     <form action="/newsington/users" method="POST" accept-charset="utf-8">
-     
-      <h4 id="signup-label" >first name</h4>
-      <h4 id="signup-label" >last name</h4>
-      <h4 id="signup-label" >email</h4>
-      <h4 id="signup-label" >password</h4><br/>
+     <h3 id="sign-up-h3">sign-up</h3>
+      
        <h4 id="signup-label">choose favorite news source</h4>
-      <input type="text" name="user[fname]"></input><br/>
-      <input type="text" name="user[lname]"></input><br/>
-      <input type="text" name="user[email]"></input><br/>
-      <input type="password" name="user[password]"></input>
+      <input id="signup-input" type="text" name="user[fname]" placeholder="first name"></input><br/>
+      <input id="signup-input" type="text" name="user[lname]" placeholder="last name"></input><br/>
+      <input id="signup-input" type="text" name="user[email]" placeholder="email"></input><br/>
+      <input id="signup-input" type="password" name="user[password]" placeholder="password"></input>
     
      <select id="signup-select" name="user[favorite_source]">
      <option value="abc-news">ABC</option>
      <option value="associated-press">AP</option>
-     <option value="bbc-news" name="user[favorite_source]">BBC</option>
+     <option value="bbc-news">BBC</option>
      <option value="the-guardian-uk">Guardian</option>
      <option value="google-news">Google</option>
     </select>
-      <button id="signup-submit" type="submit"> SUBMIT </button>
+      <button id="signup-submit" type="submit"> SIGN UP </button>
     </form>
     
   </div>

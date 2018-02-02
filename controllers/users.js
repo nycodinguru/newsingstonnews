@@ -68,9 +68,13 @@ router.get('/update', User.findByEmailMiddleware,  (req, res) => {
 // ----------------------------------------
 
 router.put('/update', User.update,  (req, res) => {
-    console.log('yo')
     //res.json(res.locals.userData)
      res.render('profile', {data: res.locals.userData});
+});
+
+router.delete('/delete', User.destroy,  (req, res) => {
+    console.log('hasta la vista')
+    //res.json(res.locals.userData)
 });
 
 // ----------------------------------------

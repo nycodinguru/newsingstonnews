@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html id="login-html">
 <head>
-  <title>Newsington Log-in</title>
+  <title>Login</title>
   <script src="/js/jquery.js"></script>
   <script src="/js/script.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/style.css" />
@@ -10,7 +10,6 @@
 <body>
   <nav>
   <h1 id="nav">Newsington News </h1>
-    <div id="shadow-div-login"></div>
 </nav>
 <div id="login-parent">
   
@@ -18,12 +17,12 @@
   <div id="login-div">
     <img id="login-img" src="/assets/user.png"><br>
     <form action="/newsington/users/login" method="POST" accept-charset="utf-8">
-      <h4 id="login-label"> email</h4>
-      <input type="text" name="user[email]"></input>
-      <h4 id="login-label"> password</h4>
-      <input type="password" name="user[password]"></input>
-      <a id="sign-up" href="">sign-up</a>
-      <button type="submit"> LOG-IN </button>
+      <h4 id="login-label"></h4>
+      <input type="text" name="user[email]" placeholder="email"></input>
+      <h4 id="login-label"></h4>
+      <input type="password" name="user[password]" placeholder="password"></input>
+      <a id="sign-up" href="/newsington/users/signup">sign-up</a>
+      <button type="submit"> LOGIN </button>
     </form>
     
   </div>
