@@ -7,6 +7,8 @@ const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const logger = require('logger');
 var weather = require('weather-js');
+require('dotenv').config()
+
 
 
 const app = express();
@@ -34,6 +36,10 @@ app.use(auth.passportSession);
 // app.use(logger('dev'));
 app.use(cookieParser());
 
+app.get('/', function (req, res){
+  res.redirect('/newsington')
+});
+
 const newsingtonRouter = require('./controllers/newsapp.js');
 
 app.use('/newsington', newsingtonRouter);
@@ -41,10 +47,6 @@ app.use('/newsington', newsingtonRouter);
 const userRouter = require('./controllers/users.js');
 
 app.use('/newsington/users', userRouter);
-
-// app.get('/', (req, res) => {
-//   res.render('main');
-// });
 
 app.use((err, req, res, next) => {
   console.log('Error encountered:', err);

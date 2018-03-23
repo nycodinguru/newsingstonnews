@@ -6,6 +6,7 @@ const userModelObject = {};
 userModelObject.create = function create(user) {
     // This is where we obtain the hash of the user's password.
     const passwordDigest = bcrypt.hashSync(user.password, 1);
+    const location = (user.city+","+user.state)
     // Generally we try to avoid passing promises around, but here 
     // LocalStrategy's interface means we can't just rely on next() 
     // to glide us to the next thing we want to do. So we'll return the callback.
@@ -17,7 +18,7 @@ userModelObject.create = function create(user) {
     // but we can use the password digest to verify if a submitted password is correct.
     // This is the magic of hashes.
     return db.oneOrNone(
-        'INSERT INTO users (fname, lname, email, password_digest, favorite_source) VALUES ($1, $2, $3, $4, $5) RETURNING *;', [user.fname, user.lname, user.email, passwordDigest, user.favorite_source]
+        'INSERT INTO users (fname, lname, email, password_digest, favorite_source, location) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;', [user.fname, user.lname, user.email, passwordDigest, user.favorite_source, location]
     );
 };
 
@@ -41,33 +42,23 @@ userModelObject.findByEmailMiddleware = function findByEmailMiddleware(req, res,
         }).catch(err => console.log('ERROR:', err));
 };
 
-// This section just demonstrates that we can build middleware for the user model 
-// and talk to the database as usual. 
-// Note that we now have access to req.user for user information, thanks to passport.
-userModelObject.incrementUserCounter = function incrementUserCounter(req, res, next) {
-    // get the user counter number
-    db.one(
-        'UPDATE users SET counter = counter + 1 WHERE email = $1 RETURNING counter', [req.user.email]
-    ).then((counterData) => {
-        res.locals.counterData = counterData;
-        next();
-    }).catch(err => console.log('ERROR:', err));
-};
 
 userModelObject.update = function accountUpdate(req, res, next) {
 
     console.log(req.body)
 
     const passwordDigest = bcrypt.hashSync(req.body.passwordDigest, 1);
+    const location = `${req.body.city}, ${req.body.state}`
 
     db
         .one(
-            "UPDATE users SET fname = $1, lname = $2, password_digest = $3, favorite_source = $4 WHERE id = $5 RETURNING *;",
+            "UPDATE users SET fname = $1, lname = $2, password_digest = $3, favorite_source = $4, location = $5 WHERE id = $6 RETURNING *;",
             [
                 req.body.fname,
                 req.body.lname,
                 passwordDigest,
                 req.body.favorite_source,
+                location,
                 req.body.id
             ]
         )

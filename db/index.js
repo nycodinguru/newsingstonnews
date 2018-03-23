@@ -3,9 +3,10 @@ const pgp = require('pg-promise')();
 const cn = {
   host: 'localhost',
   port: 5432,
-  database: 'express_passport',
+  database: 'mydatabasename',
+  user: 'myname'
 };
 
-const db = pgp(cn);
+const db = pgp(process.env.DATABASE_URL || cn);
 
 module.exports = db;

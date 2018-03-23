@@ -6,7 +6,7 @@ const Fetcher = {};
 Fetcher.topNews = (req, res, next) => {
   axios({
     method: "get",
-    url: "https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=a15bce4b34d143389058f96a45bb62b1"
+    url: `https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=${process.env.API_KEY}`
   })
   .then(response => {
    res.locals.data = response.data;
@@ -23,7 +23,7 @@ Fetcher.topNews = (req, res, next) => {
 Fetcher.business = (req, res, next) => {
   axios({
     method: "get",
-    url: "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=a15bce4b34d143389058f96a45bb62b1"
+    url: `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${process.env.API_KEY}`
   })
   .then(response => {
    res.locals.data = response.data;
@@ -40,7 +40,7 @@ Fetcher.business = (req, res, next) => {
 Fetcher.world = (req, res, next) => {
   axios({
     method: "get",
-    url: "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=a15bce4b34d143389058f96a45bb62b1"
+    url: `https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=${process.env.API_KEY}`
   })
   .then(response => {
    res.locals.data = response.data;
@@ -57,7 +57,7 @@ Fetcher.world = (req, res, next) => {
 Fetcher.tech = (req, res, next) => {
   axios({
     method: "get",
-    url: "https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=a15bce4b34d143389058f96a45bb62b1"
+    url: `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${process.env.API_KEY}`
   })
   .then(response => {
    res.locals.data = response.data;
@@ -74,7 +74,7 @@ Fetcher.tech = (req, res, next) => {
 Fetcher.favoriteSource = (req, res, next) => {
   axios({
     method: "get",
-    url: ("https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=a15bce4b34d143389058f96a45bb62b1")
+    url: (`https://newsapi.org/v2/top-headlines?sources=google-news&apiKey=${process.env.API_KEY}`)
   })
   .then(response => {
    res.favoriteSource.data = response.data.articles
@@ -88,26 +88,6 @@ Fetcher.favoriteSource = (req, res, next) => {
       });
   
 }
-
-Fetcher.fakeNews = (req, res, next) => {
-  axios({
-    method: "get",
-    url: ("https://newsapi.org/v2/top-headlines?sources=fox-news&apiKey=a15bce4b34d143389058f96a45bb62b1")
-  })
-  .then(response => {
-   res.locals.data = response.data
-    next();
-  })
-  .catch(err => {
-        console.log(
-          "Error encountered in axios call in fetcher, error:",
-          err
-        );
-      });
-  
-}
-
-
 
 
 module.exports = Fetcher;

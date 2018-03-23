@@ -11,21 +11,19 @@
   
 </style>
 
-<nav>
-  <h1 id="nav">Newsington News</h1>
-  </nav>
-  <nav style="height: 92px;">
-  <ul>
+<nav id="nav">
+  <h1>Newsington News</h1>
+  <ul id="nav-ul">
     <li><a href="/newsington/topnews" title="">top news</a></li>
     <li>
     <li><a href="/newsington/us" title="">us</a></li>
     <li><a href="/newsington/tech" title="">tech</a></li>
     <li><a href="/newsington/business" title="">business</a></li>
-    <li><a href="/newsington/fakenews" title="">fake news</a></li>
     <li><a href="/newsington/users/profile" title="">profile</a></li>
     <li><a href="/newsington/users/logout" title="">logout</a></li>
-  </ul><h4 id=temp>{{temp}}&#186;f</h4><h5 id="city"><image id="weather-icon" src={{imgurl}}>New York, NY</h5>
+  </ul><h4 id=temp>{{temp}}&#186;f</h4><h5 id="city"><image id="weather-icon" src={{imgurl}}>{{location}}</h5>
 </nav>
+
 
 
 
@@ -89,6 +87,51 @@
  
     descriptions[w].style = "padding-top: 15px; padding-bottom: 5px; margin-bottom: 50px ;font-size: 16pt;"
   }
+
+
+  window.addEventListener('scroll', detectScrollY);
+
+  function detectScrollY(){
+
+    //console.log(window.innerWidth, window.scrollY)
+
+    var nav = document.querySelectorAll('#nav');
+    var navH1 = document.querySelectorAll('#nav h1');
+    var navUl = document.querySelectorAll('#nav-ul');
+    var temp = document.querySelectorAll('#temp');
+    var city = document.querySelectorAll('#city');
+
+   if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && window.scrollY < 180){
+     nav[0].style = "height: 210px; transition: .3s;"
+     navH1[0].style = "font-size: 12vw; transition: .4s;"
+     navUl[0].style = "opacity: 1; transition 2s; display: inline-block;"
+     temp[0].style = "top: -79px;"
+     city[0].style = "display: block; transition: .5s;"
+    }
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && window.scrollY > 180){
+     nav[0].style = "height: 100px; transition: .5s; padding-bottom: 8px;"
+     navH1[0].style = "font-size: 64pt; transition: .3s;"
+     navUl[0].style = "opacity: 0; transition: .3s; display: none;"
+     temp[0].style = "top: -42px;"
+     city[0].style = "display: none; transition: .3s;"
+    }
+    else if(window.scrollY < 180){
+     nav[0].style = "height: 100px; transition: .3s;"
+     navH1[0].style = "font-size: 37pt; transition: .4s;"
+     navUl[0].style = "opacity: 1; transition 2s; display: inline-block;"
+     temp[0].style = "top: -79px;"
+     city[0].style = "display: block; transition: .5s;"
+    }
+    else if( window.scrollY > 180){
+     nav[0].style = "height: 42px; transition: .5s; padding-bottom: 8px;"
+     navH1[0].style = "font-size: 33pt; transition: .3s;"
+     navUl[0].style = "opacity: 0; transition: .3s; display: none;"
+     temp[0].style = "top: -42px;"
+     city[0].style = "display: none; transition: .3s;"
+    }
+  
+  }
+
 
 
 </script>

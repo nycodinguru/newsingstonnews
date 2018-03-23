@@ -1,53 +1,53 @@
-@font-face
-{
-      font-family: OpenSans;
-      src: url('./fonts/OpenSans-Light.ttf');
+@font-face {
+  font-family: OpenSans;
+  src: url("./fonts/OpenSans-Light.ttf");
 }
-*{
+* {
   margin: 0;
 }
-#delete-link{
+#delete-link {
   color: red;
   position: absolute;
   text-align: center;
   bottom: 37px;
   right: 365px;
 }
-nav h1{
-  color: white;
-  font-family: 'Archivo Narrow', sans-serif;
+nav h1 {
+  font-family: "Archivo Narrow", sans-serif;
   font-size: 37pt;
   margin: 0;
+  letter-spacing: 1px;
+  font-style: italic;
+  color: rgb(202, 249, 96);
 }
-ul{
+ul {
   margin: 0;
   padding: 0;
   height: 24px;
   line-height: 20px;
-  padding-top: 60px;
+  padding-top: 12px;
   padding-bottom: 8px;
-  box-shadow: 0 0 7px black;
   display: inline-block;
-  width: 104vw;
+  width: 100vw;
 }
-#temp{
+#temp {
   position: relative;
   color: white;
   font-weight: normal;
-  top: -70px;
+  top: -79px;
   text-align: right;
   right: 67px;
   font-size: 19pt;
-  font-family: 'OpenSans';
+  font-family: "OpenSans";
 }
-#city{
+#city {
   text-align: right;
   color: white;
   position: relative;
   word-spacing: 1px;
-  top: -74px;
+  top: -86px;
   right: 56px;
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: "Archivo Narrow", sans-serif;
 }
 li {
   display: inline-block;
@@ -57,96 +57,101 @@ li {
 a {
   text-decoration: none;
   color: white;
-  transition: .5s;
+  transition: 0.5s;
   font-size: 15pt;
-  padding: 5px;
   margin: 5px 0px;
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: "Archivo Narrow", sans-serif;
   word-spacing: -1px;
 }
 a:hover {
   text-decoration: none;
-  color: grey;
-  transition: .5s;
+  color: rgb(202, 249, 96);
+  transition: 0.5s;
 }
-#source{
+#source {
   text-align: center;
   font-size: 30pt;
-  margin: 34px;
+  margin: 32px;
   font-style: italic;
 }
-#fetch-this{
+#fetch-this {
   color: white;
   background: red;
   padding: 10px;
+  border-radius: 7px;
 }
-nav{
+nav {
+  padding-top: 100px;
+  margin-top: -96px;
   background-color: black;
   text-align: center;
   word-spacing: 10px;
   top: 0;
-  width: 103vw;
+  width: 100vw;
 }
-#weather-icon{
+#weather-icon {
   height: 20px;
   width: 25px;
 }
-#nav{
+#nav {
   position: fixed;
   display: inline-block;
   background: black;
   top: 0;
-  left: 0vw;
+  height: 100px;
   width: 100%;
   box-shadow: 0 0 8px black;
-  padding-bottom: 7px;
 }
-#newsdiv{
+#newsdiv {
   display: flex;
   justify-content: center;
   flex-direction: row;
 }
-#news-img{
+#news-img {
   width: 100%;
   height: 380px;
 }
-html{
-  background: rgba(0, 0, 0, .098);
-  overflow-x: hidden;
+html {
+  background: rgba(0, 0, 0, 0.098);
+  /*overflow-x: hidden;*/
 }
-#login-label{
-  font-family: 'Archivo Narrow', sans-serif;
+#login-nav {
+  left: 0;
+  height: 60px;
+  box-shadow: 0px 3px 13px -2px rgba(0, 0, 0, 0.5);
+}
+#login-label {
+  font-family: "Archivo Narrow", sans-serif;
   font-size: 10pt;
   color: lightgrey;
   top: 218px;
   position: relative;
   left: -56px;
 }
-#login-header{
+#login-header {
   position: relative;
   text-align: center;
   top: 160px;
   left: -56px;
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: "Archivo Narrow", sans-serif;
   font-weight: normal;
   font-size: 17pt;
   margin-bottom: 13px;
   margin-top: 12px;
 }
-#login-div{
+#login-div {
   display: flex;
   justify-content: center;
   background: white;
   height: 460px;
   width: 330px;
-  border-radius: 18px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+  border-radius: 7px;
+  box-shadow: 0px 0px 28px 0px rgba(0, 0, 0, 0.1);
   margin-left: auto;
   margin-right: auto;
-  border: solid 1px rgba(0, 0, 0, .1);
-  margin-top: 18%;
+  margin-top: 60px;
 }
-#login-div input{
+#login-div input {
   position: relative;
   top: 175px;
   left: -56px;
@@ -155,59 +160,71 @@ html{
   margin-bottom: 20px;
   font-size: 13pt;
   padding: 7px;
-  font-weight: bold;
+  font-weight: lighter;
 }
-#login-div button{
-  font-family: 'Archivo Narrow', sans-serif;
+#login-div input:nth-of-type(1) {
+  margin-top: 35px;
+}
+#login-div button {
+  font-family: "Archivo Narrow", sans-serif;
   position: relative;
   top: 234px;
-  left: -75px;
-  height: 30px;
+  left: -62px;
+  height: 35px;
   width: 120px;
   background: rgba(70, 136, 241, 1);
   color: white;
   font-size: 13pt;
+  border-radius: 7px;
+  border: none;
+  transition: 0.4s;
 }
-#login-img{
+#login-div button:hover {
+  transition: 0.4s;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+#login-img {
   height: 120px;
   width: 120px;
   position: relative;
   left: 108px;
-  top: 30px;
+  top: 55px;
 }
-input{
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .3);
+input {
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
   border: none;
   border-radius: 7px;
 }
-#sign-up{
+#sign-up {
   position: relative;
   color: blue;
   top: 186px;
-  left: 19px;
+  left: 23px;
   cursor: pointer;
-  font-size: 19px;
+  font-size: 17px;
 }
-#signup-input{
+#signup-input {
   height: 25px;
   width: 200px;
   margin-bottom: 20px;
   font-size: 13pt;
   padding: 7px;
-  font-weight: bold;
+  font-weight: lighter;
 }
-#signup-div{
+#signup-div {
   margin-left: auto;
   margin-right: auto;
   height: 100vh;
   width: 500px;
   background: white;
-  box-shadow: 0 0 17px rgba(0, 0, 0, .5);
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.2);
   padding: 0 22px 0 22px;
   margin-top: 0px;
-  z-index: -2; 
 }
-#signup-div input{
+#signup-div input {
   position: relative;
   top: 70px;
   left: 61px;
@@ -217,79 +234,94 @@ input{
   font-size: 13pt;
   margin: 12px;
 }
-#signup-label{
-  font-family: 'Archivo Narrow', sans-serif;
+#signup-div select {
+  top: 76px;
+  position: relative;
+  right: -78px;
+}
+#signup-label {
+  font-family: "Archivo Narrow", sans-serif;
   font-size: 13pt;
   color: lightgrey;
-  top: 437px;
+  top: 470px;
   position: relative;
   left: 61px;
   line-height: 44px;
 }
-#sign-up-h2{
-  font-family: 'Archivo Narrow', sans-serif;
-  top: 5px;
+#sign-up-h2 {
+  font-family: "Archivo Narrow", sans-serif;
+  top: 45px;
   left: 28px;
   font-size: 34px;
   line-height: 40px;
   position: relative;
 }
-#sign-up-h3{
-  font-family: 'Archivo Narrow', sans-serif;
-  top: 66px;
+#sign-up-h3 {
+  font-family: "Archivo Narrow", sans-serif;
+  top: 85px;
   left: 30px;
   font-size: 34px;
   line-height: 40px;
   position: relative;
 }
-#signup-select{
-  height: 20px;
+#signup-select {
+  height: 23px;
   width: 100px;
   font-size: 12pt;
-  position: relative;
-  top: 145px;
-  left: -167px;
+  position: relative !important;
+  top: 156px !important;
+  left: -142px;
 }
-#signup-submit{
-  font-family: 'Archivo Narrow', sans-serif;
+#signup-submit {
+  font-family: "Archivo Narrow", sans-serif;
   position: relative;
   top: 280px;
-  left: -150px;
-  height: 30px;
+  left: -123px;
+  height: 35px;
   width: 120px;
   background: rgba(70, 136, 241, 1);
   color: white;
   font-size: 13pt;
+  border-radius: 7px;
+  transition: 0.4s;
+  border: none;
 }
-.news-item-div{
+#signup-submit:hover {
+  transition: 0.4s;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+.news-item-div {
   height: 440px;
   width: 100%;
   border-radius: 15px;
   padding: 20px 0px 20px 0px;
 }
-#index-parent-div{
+#index-parent-div {
   display: flex;
   justify-content: center;
   flex-direction: row;
 }
 h1 {
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: "Archivo Narrow", sans-serif;
 }
 h2 {
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: "Archivo Narrow", sans-serif;
 }
-#title{
+#title {
+  padding: 10px 0;
   text-align: center;
-  padding: 11px;
   width: 100vw;
   color: black;
-  margin: 20px auto 30px auto;
-  font-size: 7vw;
-  text-shadow: 0 0 3px rgba(0, 0, 0, .4);
+  margin: 120px auto 0 auto;
+  font-size: 6vw;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
   margin-bottom: -6px;
 }
 #update-label {
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: "Archivo Narrow", sans-serif;
   font-size: 13pt;
   color: lightgrey;
   top: 372px;
@@ -298,10 +330,10 @@ h2 {
   line-height: 44px;
   width: 190px;
 }
-#update-button{
+#update-button {
   top: 229px;
   position: relative;
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: "Archivo Narrow", sans-serif;
   position: relative;
   left: 186px;
   height: 30px;
@@ -309,43 +341,44 @@ h2 {
   background: rgba(70, 136, 241, 1);
   color: white;
   font-size: 13pt;
+  border-radius: 7px;
+  transition: 0.4s;
+  border: none;
 }
-#favorite-source-update{
-    top: 52px;
-    position: relative;
+#update-button:hover {
+  transition: 0.4s;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
 }
-#profile-picture{
-  background-image: url('../assets/5732879.png');
-  background-size: cover; 
-  background-position: center; 
-  height: 55px; 
-  width: 55px; 
-  border-radius: 150px;
-  margin-right: auto; 
-  margin-left: auto;
-  display: inline-block;
-  top: 17px;
+#favorite-source-update {
+  top: 52px;
   position: relative;
-  left: -10px;
-  z-index: -10;
 }
-#read-more{
+#welcome-h1 {
+  margin-top: 154px;
+    text-align: center;
+    font-size: 42pt;
+    color: rgb(202, 249, 96);
+    text-shadow: 0px 0px 42px rgba(0, 0, 0, .6);
+}
+#read-more {
   color: white;
   background: red;
   font-size: 7pt;
   padding: 3px;
-  transition: .5s;
+  transition: 0.5s;
 }
-#read-more:hover{
+#read-more:hover {
   background-color: green;
-  transition: .5s;
+  transition: 0.5s;
 }
-#footer-header{
+#footer-header {
   text-align: center;
   line-height: 52px;
-
 }
-#footer{
+#footer {
   position: relative;
   top: 217%;
   background: black;
@@ -354,7 +387,7 @@ h2 {
   height: 180px;
   box-shadow: 0 0 3px 0 black;
 }
-#footer-profile{
+#footer-profile {
   position: absolute;
   bottom: -4706px;
   background: black;
@@ -363,7 +396,7 @@ h2 {
   height: 180px;
   box-shadow: 0 0 3px 0 black;
 }
-#footer-profile-fakenews{
+#footer-profile-fakenews {
   position: absolute;
   bottom: -5574px;
   background: black;
@@ -372,36 +405,37 @@ h2 {
   height: 180px;
   box-shadow: 0 0 3px 0 black;
 }
-#footer-links{
+#footer-links {
   position: relative;
   bottom: -828px;
-  display: inline-block;
+  text-align: center;
+  left: -234px;
 }
-#footer-links-profile{
+#footer-links-profile {
   position: relative;
-  bottom: -5051px;
-  display: inline-block;
   left: 222px;
   letter-spacing: 3px;
   bottom: -5091px;
+  left: -10px;
+  text-align: center;
 }
-#footer-bottom-text{
+#footer-bottom-text {
   position: relative;
   text-align: center;
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: "Archivo Narrow", sans-serif;
   bottom: -886px;
   font-size: 9pt;
   color: white;
 }
-#footer-bottom-text-profile{
+#footer-bottom-text-profile {
   position: relative;
   text-align: center;
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: "Archivo Narrow", sans-serif;
   bottom: -5104px;
   font-size: 9pt;
   color: white;
 }
-#footer-links ul{
+#footer-links ul {
   height: 0px;
   line-height: 0px;
   padding-top: 0px;
@@ -412,7 +446,7 @@ h2 {
   top: -20px;
   font-size: 7pt;
 }
-#footer-links li{
+#footer-links li {
   height: 0px;
   line-height: 0px;
   padding-top: 25px;
@@ -425,9 +459,8 @@ h2 {
   bottom: -33px;
   left: 225px;
   letter-spacing: 3px;
-
 }
-#footer-news-links ul{
+#footer-news-links ul {
   height: 0px;
   line-height: 0px;
   padding-top: 0px;
@@ -439,7 +472,7 @@ h2 {
   top: -20px;
   font-size: 7pt;
 }
-#footer-news-links li{
+#footer-news-links li {
   height: 0px;
   line-height: 0px;
   padding-top: 25px;
@@ -449,47 +482,47 @@ h2 {
   display: list-item;
   font-size: 11pt;
 }
-#footer-social-media{
+#footer-social-media {
   width: 57px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 8px;
 }
-#twitter{
-  background-image: url('../assets/twitter.png');
+#twitter {
+  background-image: url("../assets/twitter.png");
   background-size: cover;
   background-position: center;
   height: 25px;
   width: 25px;
   display: inline-block;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
 }
-#insta{
-  background-image: url('../assets/instagram.png');
+#insta {
+  background-image: url("../assets/instagram.png");
   background-size: cover;
   background-position: center;
   height: 25px;
   width: 25px;
   display: inline-block;
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
 }
-#twitter:hover{
-  background-image: url('../assets/twitter2.png');
-  transition: .5s;
+#twitter:hover {
+  background-image: url("../assets/twitter2.png");
+  transition: 0.5s;
 }
-#insta:hover{
-  background-image: url('../assets/instagram2.png');
-  transition: .5s;
+#insta:hover {
+  background-image: url("../assets/instagram2.png");
+  transition: 0.5s;
 }
-.bullets{
+.bullets {
   color: red;
 }
-#delete-button{
+#delete-button {
   top: 229px;
   position: relative;
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: "Archivo Narrow", sans-serif;
   position: relative;
   left: 142px;
   height: 30px;
@@ -497,10 +530,19 @@ h2 {
   background: red;
   color: white;
   font-size: 13pt;
+  border: none;
+  border-radius: 7px;
 }
-#delete-label{
+#delete-button:hover {
+  transition: 0.4s;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+}
+#delete-label {
   text-align: center;
-  font-family: 'Archivo Narrow', sans-serif;
+  font-family: "Archivo Narrow", sans-serif;
   font-size: 28pt;
   color: red;
   top: 75px;
@@ -509,7 +551,7 @@ h2 {
   line-height: 37px;
   width: 190px;
 }
-#checkBox{
+#checkBox {
   position: relative;
   top: 119px;
   left: 229px;
@@ -518,12 +560,12 @@ h2 {
   margin-bottom: 13px;
   font-size: 13pt;
   margin: 12px;
-  transform: scale(2,2);
-  box-shadow: 0 0 rgba(0, 0, 0, 0); 
+  transform: scale(2, 2);
+  box-shadow: 0 0 rgba(0, 0, 0, 0);
   border: none;
   border-radius: 7px;
 }
-#delete-div input{
+#delete-div input {
   position: relative;
   top: 124px;
   height: 25px;
@@ -532,17 +574,65 @@ h2 {
   font-size: 13pt;
   margin: 12px;
 }
-#delete-div{
+#delete-div {
   margin-left: auto;
   margin-right: auto;
   height: 100vh;
   width: 500px;
   background: white;
-  box-shadow: 0 0 17px rgba(0, 0, 0, .5);
+  box-shadow: 0 0 17px rgba(0, 0, 0, 0.5);
   padding: 0 22px 0 22px;
   margin-top: 0px;
-  z-index: -2; 
+  z-index: -2;
 }
-#delete-form-html{
+#delete-form-html {
   overflow: hidden;
+}
+
+@media only screen
+and (-webkit-min-device-pixel-ratio: 1.77) 
+and (orientation : portrait) {
+  #nav {
+    height: 210px;
+  }
+  nav {
+    height: 210px;
+  }
+  nav h1 {
+    font-size: 12vw;
+    padding-bottom: 5px;
+  }
+
+  #nav h1 {
+    font-size: 12vw;
+    padding-bottom: 5px;
+  }
+
+  #nav a {
+    font-size: 34pt;
+  }
+
+  #temp,
+  #city {
+    display: none !important;
+  }
+
+  #title {
+    margin: 234px auto 0 auto;
+    font-size: 9vw;
+  }
+  #login-div{
+    box-shadow: none;
+    height: 39vh;
+    transform: scale(3,3);
+    top: 626px;
+    position: relative;
+    border-radius: 0px;
+  }
+  #login-nav{
+    height: 145px;
+  }
+  #login-body{
+    overflow: hidden;
+  }
 }
