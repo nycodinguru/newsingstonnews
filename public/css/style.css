@@ -396,15 +396,6 @@ h2 {
   height: 180px;
   box-shadow: 0 0 3px 0 black;
 }
-#footer-profile-fakenews {
-  position: absolute;
-  bottom: -5574px;
-  background: black;
-  color: white;
-  width: 100vw;
-  height: 180px;
-  box-shadow: 0 0 3px 0 black;
-}
 #footer-links {
   position: relative;
   bottom: -828px;
@@ -423,9 +414,12 @@ h2 {
   position: relative;
   text-align: center;
   font-family: "Archivo Narrow", sans-serif;
-  bottom: -886px;
+  bottom: -865px;
   font-size: 9pt;
   color: white;
+}
+#footer-bottom-text a{
+  font-size: 10pt;
 }
 #footer-bottom-text-profile {
   position: relative;
