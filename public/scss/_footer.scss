@@ -1,0 +1,65 @@
+.Footer-container {
+    background: black;
+    color: white;
+    padding: 30px;
+    @extend .archivo-narrow;
+    margin-top: 220px;
+
+    @include mobile {
+        padding: 30px 15px 15px 15px;
+    }
+
+    .footer-header {
+        text-align: left;
+        @extend .yanone-kaffeesatz;
+        color: $newsington-green;
+    }
+
+    .footer-links {
+        list-style: none;
+        display: flex;
+
+        @include mobile {
+            flex-direction: column;
+        }
+
+        .group-one {
+            font-size: 1.1rem;
+        }
+
+        .group-two {
+            margin-left: 100px;
+            font-size: 0.9rem;
+
+            @include mobile {
+                margin: 15px 0;
+                font-size: 0.76rem;
+            }
+
+            a {
+                opacity: 0.75;
+            }
+
+            a:hover {
+                transition: all 0.4s;
+                opacity: 1;
+            }
+        }
+
+        a:hover {
+            color: $newsington-green;
+            transition: all 0.4s;
+        }
+    }
+
+    .footer-bottom-text {
+        font-size: 0.7rem;
+        text-align: right;
+        opacity: 0.75;
+
+        @include mobile {
+            font-size: 0.5rem;
+        }
+    }
+
+}

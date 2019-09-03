@@ -1,0 +1,78 @@
+.delete-container {
+    min-height: calc(100vh - 400px);
+    margin-top: 95px;
+
+    @include mobile {
+          margin-top: 53px;
+    }
+
+    .delete-container-header {
+        margin: 0px 0 30px 0;
+        text-align: center;
+        color: white;
+        padding: 10px;
+        text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+        background-color: $newsington-green;
+        width: 100vw;
+        font-size: 2rem;
+        height: 65px;
+    }
+
+    form {
+        max-width: 1280px;
+        margin: 0 auto;
+
+        @include mobile {
+            margin-top: 20vh;
+        }
+
+        h4 {
+            font-size: 1.6rem;
+            text-align: center;
+
+            @include mobile {    
+                font-size: 1.3rem;
+            }
+        }
+
+        p {
+            font-style: italic;
+            text-align: center;
+            margin: 10px auto 30px auto;
+            width: 35%;
+
+            
+            @include mobile {
+                font-size: .8rem;
+                width: 90%;
+                font-style: italic;
+                text-align: center;
+                margin: 10px auto 30px auto;
+            }
+        }   
+
+        #checkbox {
+            width: 100%;
+        }
+
+        .delete-button {
+            @extend .archivo-narrow;
+            display: block;
+            text-align: center;
+            width: max-content;
+            font-size: 1.1rem;
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            font-weight: bold;
+            margin: 15px auto;
+            text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+            transition: all 0.4s;
+
+            &:hover {
+                background-color: red;
+            }
+        }
+    }
+}
+  

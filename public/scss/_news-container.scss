@@ -1,0 +1,197 @@
+.Category-title {
+    margin: 90px 0 50px 0;
+    text-align: center;
+    font-style: italic;
+    background: $newsington-green;
+    color: white;
+    padding: 10px;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    @extend .archivo-narrow;
+    height: 70px;
+    line-height: 3.3rem;
+    font-size: 2.5rem;
+
+    @include mobile {
+        margin: 50px 0 0 0;
+        height: 50px;
+        font-size: 1.3rem;
+        line-height: 2rem;
+    }
+}
+
+.News-container-div {
+    @extend .Container;
+    margin: 0 auto;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    #Headline {
+        width: 100%;
+        height: 600px;
+        margin: 0 0 300px 0;
+    
+    &:first-of-type {  
+        @include mobile {
+            margin: 0 0 220px 0 !important;
+        }
+    }
+
+        @include mobile {
+            margin: 0;
+        }
+
+        .News-item {
+            height: 100%;
+
+            .News-item-title-parent {
+                height: 100%;
+    
+                .News-item-title {
+                    font-size: 2.3rem;
+                    text-align: center;
+                    width: 50%;
+                    margin: 30px auto;
+
+                    @include mobile {
+                        font-size: 1.55rem;
+                        width: 60%;
+                    }
+                }
+            }
+    
+            .News-item-description {
+                width: 80%;
+                text-align: center;
+                margin: 30px auto;
+                font-size: 1.1rem;
+
+                @include mobile {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    .News-item-link {
+        height: 400px;
+        width:  560px;
+
+
+    &:hover {
+        .News-item {
+            background-color: rgba(255, 255, 255, 0.3);
+            background-blend-mode: lighten;
+            transition: all 0.4s;
+        }
+
+        h5 {
+            opacity: 1 !important;
+        }
+    }
+
+        .News-item {
+            height: 100%;
+            width: 100%;
+
+            .News-item-title-parent {
+                height: 110%;
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: column;
+
+                .News-item-title {
+                    background: white;
+                    font-size: 1.6rem;
+                    text-align: left;
+                    width: 50%;
+                    margin: 0;
+                    padding: 10px;
+                    margin: 0 0 0 55%;
+
+                    @include mobile {
+                        margin: 0 0 0 45%;
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+
+            .News-item-description {
+                width: 90%;
+                margin: 25px 0 0 0;
+                pointer-events: none;
+
+                @include mobile {
+                    padding: 0 25px;
+                    font-size: 0.9rem;
+                }
+            }
+
+            h5 {
+            opacity: 0;
+            text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+            font-size: 1rem;
+            background-color: $newsington-green;
+            width: max-content;
+            padding: 8px;
+            color: white;
+            @extend .archivo-narrow;
+            position: absolute;
+            margin: 0;
+            } 
+        }
+
+    &:nth-child(odd) {
+        margin: 0 0 220px 0;
+
+        @include mobile {
+            margin: 210px 0;
+        }
+
+        @include tablet {
+            margin: 70px 0;
+        }
+    }
+
+    &:nth-child(even) {
+        margin: 260px 0 0 0;
+
+        @include mobile {
+            margin: 0;
+        }
+
+        @include tablet {
+            margin: 70px 0;
+        }
+    }
+ 
+        
+    }
+
+    // & :nth-child(3) {
+    //     .News-item {
+    //         margin-top: 0 !important;
+    //     }
+
+    //     @include mobile {
+    //         margin-top: 50px;
+    //     }
+    // }
+
+
+
+    // & :nth-child(even) {
+
+    //     @include mobile {
+    //         margin: 0;
+    //     }
+
+    //     @include tablet {
+    //         margin: 0;
+    //     }
+    // }
+
+    
+}

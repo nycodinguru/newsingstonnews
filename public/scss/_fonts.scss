@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "archivo-narrow";
+    src: url("../assets/fonts/Archivo_Narrow/ArchivoNarrow-Bold.ttf")
+        format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "yanone-kaffeesatz";
+    src: url("../assets/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Regular.ttf")
+        format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "open-sans";
+    src: url("../assets/fonts/Open_Sans/OpenSans-Regular.ttf")
+        format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .archivo-narrow {
+    font-family: "archivo-narrow", sans-serif;
+  }
+
+  .yanone-kaffeesatz {
+    font-family: "yanone-kaffeesatz", sans-serif;
+  }
+
+  .open-sans {
+    font-family: "open-sans", sans-serif;
+  }

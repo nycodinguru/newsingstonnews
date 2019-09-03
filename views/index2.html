@@ -1,133 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Newsington</title>
+  <title>Newsington News</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <script src="/js/jquery.js"></script>
   <script src="/js/sugar.js"></script>
   <script src="/js/script.js"></script>
-  <link rel="stylesheet" type="text/css" href="/css/style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/index.css" />
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel="icon" sizes="192x192" href="/assets/logo.png">
 </head>
-<body style="font-family: 'Archivo Narrow', sans-serif;">
-  
-</style>
-
-<nav id="nav">
-  <h1>Newsington News</h1>
-  <ul id="nav-ul">
-    <li><a href="/newsington/topnews" title="">top news</a></li>
-    <li>
+<body>
+<nav class="Nav">
+  <h1 class="Newsington-logo"><span>//</span> Newsington News <span>//</span></h1>
+  <ul id="Nav-ul">
+    <li><a href="/newsington/" title="">top news</a></li>
     <li><a href="/newsington/us" title="">us</a></li>
     <li><a href="/newsington/tech" title="">tech</a></li>
     <li><a href="/newsington/business" title="">business</a></li>
-    <li><a href="/newsington/users/login" title="">login</a></li>
-  </ul><h4 id=temp>{{temp}}&#186;f</h4><h5 id="city"><image id="weather-icon" src={{imgurl}}>{{location}}</h5>
+    <li><a href="/newsington/sports" title="">sports</a></li>
+  </ul>
+  <div class="button log-in">log in</div>
+  <div class="Nav-burger-icon"></div>
 </nav>
-
-
-<h1 id="title">latest news from {{category}}</h1>
-<div id="index-parent-div">
-
-{{ #data }}
-<div class="news-item-div">
-<h3>{{ title }}</h3>
-
-<div id="news-img" style="background: url('{{ urlToImage }}'); background-size: cover; background-position: center;">
-
+<div class="Login-container">
+  <div class="Login-div">
+  <div class="Close-button" onclick=""></div>
+    <h3> log in </h3>
+    <form action="/newsington/users/login" method="POST" accept-charset="utf-8">
+      <input type="text" name="user[email]" placeholder="email">
+      <input class="password-input" type="password" name="user[password]" placeholder="password">
+      <a class="sign-up-link" href="/newsington/users/signup">sign up</a>
+      <button type="submit"> log in </button>
+    </form>
+  </div>
 </div>
-
-<p>{{ description }}<a href="{{url}}" target="_blank" id="read-more">READ MORE...</a></p>
-
-{{ /data }}
+<h1 class="Category-title">latest news from {{category}}</h1>
+<div class="News-container-div">  
+  {{ #data }}
+  <a class="News-item-link" href="{{url}}" target="_blank" id="read-more">
+    <div class="News-item" id="news-img" style="background-image: url('{{ urlToImage }}'); background-size: cover; background-position: center;">
+      <h5>READ MORE...</h5>
+      <div class="News-item-title-parent">
+        <h3 class="News-item-title">{{ title }}</h3>
+      </div>
+      <p class="News-item-description">{{ description }}</p>
+    </div>
+  </a>
+  {{ /data }}
 </div>
-</div>
-<div id="footer">
-
-  <h2 id="footer-header">Newsington News</h2>
-  <div id="footer-social-media">
-    <div id="twitter"></div>
-    <div id="insta"></div>
+<div class="Footer-container">
+  <h2 class="footer-header">Newsington News</h2>
+  <div class="footer-links">
+    <div class="group-one">
+      <li><a href="/newsington/" title="">top news</a></li>
+      <li><a href="/newsington/us" title="">us</a></li>
+      <li><a href="/newsington/tech" title="">tech</a></li>
+      <li><a href="/newsington/business" title="">business</a></li>
+      <li><a href="/newsington/sports" title="">sports</a></li>
+    </div>
+    <div class="group-two">
+      <li><a href="" title="">terms of service</a></li>
+      <li><a href="" title="">about</a></li>
+      <li><a href="" title="">careers</a></li>
+      <li><a href="" title="">faq</a></li>
+      <li><a href="" title="">privacy policy</a></li>
     </div>
   </div>
-
-  <div id="footer-links">
-    
-    <li><a href="" title="">terms of service <span class="bullets"> &bull;</span></a></li>
-    <li><a href="" title="">about <span class="bullets"> &bull;</span></a></li>
-    <li><a href="" title="">privacy policy</a></li>
-    
+  <div class="footer-bottom-text">
+      <a href="https://newsapi.org" target="_blank">Powered by News API</a><br/>
+      COPYRIGHT &copy; 2019, Newsington Media. ALL RIGHTS RESERVED
   </div>
-
-<div id=footer-bottom-text><span>Newsington News</span><br/>
-    <a href="https://newsapi.org" target="_blank">Powered by News API</a><br/>
-    COPYRIGHT &copy; 2018, Newsington Media. ALL RIGHTS RESERVED</div>
-  
-
 </div>
-<script>
-  
-  var titles  = document.querySelectorAll('h3');
-  var newsDiv = document.querySelectorAll('div');
-  var descriptions = document.querySelectorAll('p');
-
-   for (var r = 0; r < titles.length; r++) {
- 
-   titles[r].style = "text-align: center; margin: 15px 0px 10px 0px; font-size: 4vw;background: black; color: white; padding: 8px; margin-bottom: 0px;"
-  }
-
-  for (var w = 0; w < titles.length; w++) {
- 
-    descriptions[w].style = "padding-top: 15px; padding-bottom: 5px; margin-bottom: 50px;font-size: 16pt;"
-  }
-
-  window.addEventListener('scroll', detectScrollY);
-
-  function detectScrollY(){
-
-    //console.log(window.innerWidth, window.scrollY)
-
-    var nav = document.querySelectorAll('#nav');
-    var navH1 = document.querySelectorAll('#nav h1');
-    var navUl = document.querySelectorAll('#nav-ul');
-    var temp = document.querySelectorAll('#temp');
-    var city = document.querySelectorAll('#city');
-
-   
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && window.scrollY < 180){
-     nav[0].style = "height: 210px; transition: .3s;"
-     navH1[0].style = "font-size: 12vw; transition: .4s;"
-     navUl[0].style = "opacity: 1; transition 2s; display: inline-block;"
-     temp[0].style = "top: -79px;"
-     city[0].style = "display: block; transition: .5s;"
-    }
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && window.scrollY > 180){
-     nav[0].style = "height: 100px; transition: .5s; padding-bottom: 8px;"
-     navH1[0].style = "font-size: 64pt; transition: .3s;"
-     navUl[0].style = "opacity: 0; transition: .3s; display: none;"
-     temp[0].style = "top: -42px;"
-     city[0].style = "display: none; transition: .3s;"
-    }
-    else if(window.scrollY < 180){
-     nav[0].style = "height: 100px; transition: .3s;"
-     navH1[0].style = "font-size: 37pt; transition: .4s;"
-     navUl[0].style = "opacity: 1; transition 2s; display: inline-block;"
-     temp[0].style = "top: -79px;"
-     city[0].style = "display: block; transition: .5s;"
-    }
-    else if( window.scrollY > 180){
-     nav[0].style = "height: 42px; transition: .5s; padding-bottom: 8px;"
-     navH1[0].style = "font-size: 33pt; transition: .3s;"
-     navUl[0].style = "opacity: 0; transition: .3s; display: none;"
-     temp[0].style = "top: -42px;"
-     city[0].style = "display: none; transition: .3s;"
-    }
-  
-  }
-
-
-</script>
 </body>
 </html>
-
+<script>
+  const newsItems = $('.News-item-link') ? $('.News-item-link') : 0;
+  if ( newsItems !== 0 ) for (let i = 0; i < 2; i++) newsItems[i].setAttribute("id", "Headline");
+</script>
 
 

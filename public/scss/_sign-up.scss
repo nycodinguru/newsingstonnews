@@ -1,0 +1,128 @@
+.Sign-up-container {
+    @extend .Container;
+    width: 100vw;
+    background: rgba(255, 255, 255, 0.75);
+
+    &.active {
+        transition: all 0.5s;
+        opacity: 1 !important; 
+    }
+
+    .sign-up-header {
+        margin: 90px 0 30px 0;
+        text-align: center;
+        font-size: 3rem;
+        color: white;
+        padding: 10px;
+        text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+        background-color: $newsington-green;
+        width: 100vw;
+        height: 86px;
+
+        @include mobile {
+            font-size: 2rem;
+            margin: 50px 0 30px 0;
+            height: 65px;
+        }
+    }
+
+    .Login-div {
+        width: 350px;
+        height: 430px;
+        background: black;
+        margin: 200px auto;
+
+        .Close-button {
+            height: 30px;
+            width: 30px;
+            position: relative;
+            float: right;
+            top: 3px;
+            right: 3px;
+            font-size: 1rem;
+            background-image: url('../assets/x.png');
+            filter: invert(100);
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            transition: 0.4s;
+    
+            &:hover {
+                transform: rotate(180deg);
+                transition: 0.4s;
+            }
+        }
+    }
+
+    form {
+        position: relative;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        border: black solid;
+        border-width: 4px; 
+        width: 320px;
+        margin: 0 auto;
+        position: relative;
+        padding: 6px;
+        font-size: 1rem;   
+
+        @include mobile {
+            width: 90%;
+        }
+    }
+    
+    .news-source-label, .state-label {
+        text-align: center;
+    }
+
+    .state-select, .news-source-select {
+        width: 320px;
+        margin: 10px auto
+    }
+
+    .password-input {
+        margin-top: 10px;
+    }
+
+    .sign-up-link {
+        color: $newsington-green;
+        text-align: center;
+        margin: 22px 0;
+        font-size: 1rem;
+    }
+
+    .button {
+        width: max-content;
+        padding: 8px 12px;
+        background-color: #fff;
+        cursor: pointer;
+        border: solid black;
+        border-width: 4px;
+        font-size: 1rem;
+        margin: 30px auto 0 auto;
+        
+    &:hover {
+        background-color: $newsington-green;;
+        transition: all 0.4s;
+        color: white;
+        text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+    }
+    }
+
+    #delete-link {
+        position: absolute;
+        margin: 120px auto;
+        text-align: center;
+        width: 100%;
+        @extend .archivo-narrow;
+
+        &:hover {
+            color: $newsington-green;
+            transition: all 0.4s;
+        }
+    }
+}

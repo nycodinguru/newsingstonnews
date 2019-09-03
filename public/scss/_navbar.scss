@@ -1,0 +1,284 @@
+.Nav {
+    background-color: black;
+    width: 100vw;
+    height: 95px;
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.4);
+    z-index: 10000;
+
+    @include mobile {
+        height: 53px;
+        line-height: 3.3rem;
+
+        &.active {
+            .Newsington-logo {
+                filter: blur(4px);
+                opacity: 0.4;
+            }
+        }
+    }
+
+    span {
+        color: white;
+        margin: 0 5px;
+    }
+
+    .Nav-burger-icon {
+        &, &::before,
+        &::after {
+            display: none;
+            position: absolute;
+            height: 3px;
+            width: 43px;
+            border-radius: 6px;
+            transition: all 0.4s;
+            background-color: white;
+
+            @include mobile {
+                display: inline-block;
+                float: right;
+                right: 14px;
+                bottom: 27px;
+                height: 2px;
+                width: 22px;
+            }
+        }
+
+        &::before {
+            left: 0rem;
+            top: -0.4rem;
+        }
+
+        &::after {
+            left: 0rem;
+            top: 0.4rem;
+        }
+
+        &::before,&::after {
+            content: "";
+            position: absolute;
+            background-color: white !important;
+            display: inline-block;
+        }
+
+        &.active {
+            background-color: transparent;
+            bottom: 27px;
+            transition: all 0s;
+        
+          }
+  
+          &.active::before {
+            top: 0rem;
+           
+            @include transform(rotate(45deg));
+          }
+  
+          &.active::after {
+            top: 0rem;
+           
+            @include transform(rotate(-45deg));
+          }
+  
+          &.active:hover .Nav-burger-icon::before,
+          &.active:hover .Nav-burger-icon::after {
+            @include transform(rotate(0deg));
+          }
+
+
+        }
+
+    .Newsington-logo {
+        font-size: 37pt;
+        margin-bottom: 15px;
+        letter-spacing: -1px;
+        @extend .yanone-kaffeesatz;
+        color: rgb(202, 249, 96);
+        text-align: center;
+        cursor: pointer;
+        width: max-content;
+        margin: 0 auto;
+
+        @include mobile {
+            font-size: 1.9rem;
+        }
+    }
+
+    #Nav-ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        width: 50%;
+        margin: 5px auto 0 auto;
+        transition: all 1s;
+
+
+        @include mobile {
+            height: 0;
+            background: rgba(0, 0, 0, 0.75);
+            width: 100vw;
+            color: white;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            margin-top: -53px;
+            opacity: 0;
+            z-index: -10000;
+            transition: all 0s;
+            display: none;
+
+            &.active {
+                display: flex;
+                height: 100vh;
+                z-index: 10000;
+                opacity: 1;
+                transition: all 0s;
+            }
+        }
+
+        li {
+            cursor: pointer;
+            margin: 0 8px;
+
+            @include mobile {
+                transform: translateX(50px);
+                opacity: 0; 
+            }
+           
+
+            a {
+                font-size: 1.1rem;
+
+                @include mobile {
+                    font-size: 1.7rem;
+                }
+
+                @include tablet {
+                    font-size: 0.86rem;
+                }
+                
+            }
+        }
+
+        li:hover {
+            color: rgb(202, 249, 96);
+            transition: all 0.5s;
+        }
+        
+    }
+
+    a, p {
+        text-decoration: none;
+        color: white;
+        transition: 0.5s;
+        font-size: 1.1rem;
+        margin: 5px 0px;
+        word-spacing: -1px;
+        @extend .archivo-narrow;
+      }
+      a:hover, p:hover {
+        text-decoration: none;
+        color: rgb(202, 249, 96);
+        transition: 0.5s;
+      }
+
+      p {
+          margin: 0;
+
+          @include mobile {
+            .Nav p {
+                font-size: 1.6rem;
+                margin: 0px;
+            }
+          }
+      }
+
+    &.scrolled {
+        height: 53px;
+        transition: all 0.4s;
+
+        @include mobile {
+
+            h1 {
+                font-size: 1.9rem !important;
+            }
+        }
+
+        h1 {
+            font-size: 25pt;
+            transition: all 0.4s;
+            margin-top: 6px;
+
+            @include mobile {
+                margin-top: 0;
+            }
+        }
+
+        ul li {
+            display: none;
+            transition: all 0.4s;
+
+            @include mobile {
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
+        .button {
+            transition: all 0.4s;
+            bottom: 42px;
+            font-size: 0.8rem !important; 
+
+            @include mobile {
+                transition: all 1s;
+                bottom:  60px;
+                font-size: 1.2rem !important;
+            }
+        }
+
+        .log-in {
+            padding: 5px 10px;
+        }
+
+        .logout {
+            padding: 5px 10px;
+        }
+    }
+
+    .button{
+        color: white;
+        border: solid white;
+        border-width: 3px;
+        width: max-content;
+        padding: 5px 12px;
+        position: relative;
+        float: right;
+        right: 5%;
+        bottom: 60px;
+        cursor: pointer;
+
+        @include mobile {
+            display: none;
+            float: none;
+            right: 0;
+            position: relative;
+            margin: 0 auto;
+            height: 45px;
+            width: 75px;
+            font-size: 1.2rem !important;
+            line-height: 1.8rem;
+            text-align: center;
+            bottom: 3vh;
+            opacity: 0;
+            background-color: white;
+            color: black;
+            transition: all 2s;
+
+            &.active { 
+                display: block;
+            }
+        }
+    }
+}

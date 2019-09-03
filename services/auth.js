@@ -15,13 +15,14 @@ authObject.passportInstance = passport.initialize();
 authObject.passportSession = passport.session();
 
 authObject.restrict = function restrict(req, res, next) {
-    console.log('in auth.restrict. req.isAuthenticated():', req.isAuthenticated());
+    //console.log('in auth.restrict. req.isAuthenticated():', req.isAuthenticated());
     if (req.isAuthenticated()) {
         next();
     } else if (req.method === 'POST') {
         res.send('logged out');
+        res.render('index2', {data: res.locals.data.articles, category: 'the top headlines'});
     } else {
-        res.redirect('/newsington/');
+        next();
     }
 }
 
@@ -30,7 +31,7 @@ authObject.restrict = function restrict(req, res, next) {
 // We can then retrieve that information during the next request phase in req.deserializeUser
 // Here we're not actually doing anything beyond storing the normal user data, however.
 passport.serializeUser((user, done) => {
-    console.log('in passport.serializeUser. user:', user);
+    //console.log('in passport.serializeUser. user:', user);
     done(null, user);
 });
 
@@ -38,14 +39,14 @@ passport.serializeUser((user, done) => {
 // how shall we define any other user information we'll need in our
 // routes, conveniently accessible as req.user in routes?
 passport.deserializeUser((userObj, done) => {
-    console.log('in passport.deserializeUser. userObj: ', userObj);
+    //console.log('in passport.deserializeUser. userObj: ', userObj);
     User
         .findByEmail(userObj.email) 
         .then(user => {
             done(null, user); // updates us to current database values
         })
         .catch(err => {
-            console.log('ERROR in deserializeUser:', err);
+            //console.log('ERROR in deserializeUser:', err);
             done(null, false);
         });
 });
@@ -72,7 +73,7 @@ passport.use(
                     return done(null, user); 
                 })
                 .catch((err) => {
-                    console.log('ERROR:', err);
+                    //console.log('ERROR:', err);
                     return done(null, false); // signals that signup was unsuccessful
                 });
         })
@@ -94,7 +95,7 @@ passport.use(
                         // bcrypt.compareSync rehashes the password and sees if it matches user.password_digest,
                         // returning true if there's a match and false otherwise.
                         const isAuthed = bcrypt.compareSync(password, user.password_digest);
-                        console.log('isAuthed:', isAuthed);
+                        //console.log('isAuthed:', isAuthed);
                         if (isAuthed) {
                             // Signals that we're logged in.
                             // The second argument will get further processed by passport.serializeUser.

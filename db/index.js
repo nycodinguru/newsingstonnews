@@ -4,7 +4,7 @@ const cn = {
   host: 'localhost',
   port: 5432,
   database: 'express_passport',
-  user: 'myname'
+  user: 'rashad'
 };
 
 const db = pgp(process.env.DATABASE_URL || cn);

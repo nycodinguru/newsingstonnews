@@ -1,44 +1,61 @@
 <!DOCTYPE html>
-<html id="delete-form-html">
+<html>
 <head>
-  <title>Delete Account</title>
+  <title>Newsington News - Delete Account</title>
   <script src="/js/jquery.js"></script>
   <script src="/js/script.js"></script>
-  <link rel="stylesheet" type="text/css" href="/css/style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow" rel="stylesheet">
-</head>
+  <link rel="stylesheet" type="text/css" href="/css/index.css" />
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel="icon" sizes="192x192" href="/assets/logo.png">
+  <meta charset="utf-8" name="viewport" content= "width=device-width, initial-scale=1.0">
 <body>
-  <nav >
-  <h1 id="nav">Newsington News</h1>
-  <ul>
-    <li><a href="/newsington/topnews" title="">top news</a></li>
-    <li>
+ <nav class="Nav">
+  <h1 class="Newsington-logo"><span>//</span> Newsington News <span>//</span></h1>
+  <ul id="Nav-ul">
+    <li><a href="/newsington/users/profile" title="">home</a></li>
+    <li><a href="/newsington/" title="">top news</a></li>
     <li><a href="/newsington/us" title="">us</a></li>
     <li><a href="/newsington/tech" title="">tech</a></li>
     <li><a href="/newsington/business" title="">business</a></li>
-    <li><a href="/newsington/fakenews" title="">fake news</a></li>
-    <li><a href="/newsington/users/profile" title="">profile</a></li>
-    <li><a href="/newsington/users/logout" title="">logout</a></li>
+    <li><a href="/newsington/sports" title="">sports</a></li>
+    <li><a href="/newsington/update" title="">update profile</a></li>
   </ul>
+  <a href="/newsington/users/logout" >
+    <div class="button logout"> logout </div>
+  </a>
+  <div class="Nav-burger-icon"></div>
 </nav>
-
-
-  <div id="delete-div">
-    <h2 id="sign-up-h2">delete account</h2>
-
-     
+  <div class="delete-container">
+    <h2 class="delete-container-header">delete account</h2>
     <form action="" method="" accept-charset="utf-8">
-     
-      
-       <h4 id="delete-label">Hey {{fname}} {{lname}} would you like to delete your account?</h4>
-      <input id="checkBox" type="checkbox">
+       <h4 id="delete-label">Hey {{fname}} would you like to delete your account?</h4>
+       <p>Please check the box below if you would like to permanently delete your account</p>
+      <input id="checkbox" type="checkbox">
       <input id="id" type="hidden" name="id" value="{{id}}"></input>
-   
-      <button id="delete-button" type="submit" value="submit">DELETE</button>
+      <button class="delete-button" type="submit" value="submit">delete</button>
     </form>
-    
   </div>
 </div>  
-
 </body>
+<div class="Footer-container">
+  <h2 class="footer-header">Newsington News</h2>
+  <div class="footer-links">
+    <div class="group-one">
+      <li><a href="/newsington/users/profile" title="">home</a></li>
+      <li><a href="/newsington/" title="">top news</a></li>
+      <li><a href="/newsington/us" title="">us</a></li>
+      <li><a href="/newsington/tech" title="">tech</a></li>
+      <li><a href="/newsington/business" title="">business</a></li>
+    </div>
+    <div class="group-two">
+      <li><a href="" title="">terms of service</a></li>
+      <li><a href="" title="">about</a></li>
+      <li><a href="" title="">privacy policy</a></li>
+    </div>
+  </div>
+  <div class="footer-bottom-text">
+      <a href="https://newsapi.org" target="_blank">Powered by News API</a><br/>
+      COPYRIGHT &copy; 2019, Newsington Media. ALL RIGHTS RESERVED
+  </div>
+</div>
 </html>

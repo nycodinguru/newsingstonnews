@@ -38,7 +38,7 @@ router.get('/logout', (req, res) => {
     // passport put this method on req for us
     req.logout();
     // redirect back to index page
-    res.redirect('/newsington');
+    res.redirect('/');
 });
 
 // ----------------------------------------

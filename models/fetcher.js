@@ -31,16 +31,16 @@ Fetcher.business = (req, res, next) => {
   })
   .catch(err => {
         console.log(
-          "Error encountered in axios call in fetcher.topNews, error:",
+          "Error encountered in axios call in fetcher.business, error:",
           err
         );
       });
 }
 
-Fetcher.world = (req, res, next) => {
+Fetcher.us = (req, res, next) => {
   axios({
     method: "get",
-    url: `https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=${process.env.API_KEY}`
+    url: `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.API_KEY}`
   })
   .then(response => {
    res.locals.data = response.data;
@@ -48,7 +48,24 @@ Fetcher.world = (req, res, next) => {
   })
   .catch(err => {
         console.log(
-          "Error encountered in axios call in fetcher.topNews, error:",
+          "Error encountered in axios call in fetcher.us, error:",
+          err
+        );
+      });
+}
+
+Fetcher.sports = (req, res, next) => {
+  axios({
+    method: "get",
+    url: `https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=${process.env.API_KEY}`
+  })
+  .then(response => {
+   res.locals.data = response.data;
+  next();
+  })
+  .catch(err => {
+        console.log(
+          "Error encountered in axios call in fetcher.sports, error:",
           err
         );
       });
@@ -65,7 +82,7 @@ Fetcher.tech = (req, res, next) => {
   })
   .catch(err => {
         console.log(
-          "Error encountered in axios call in fetcher.topNews, error:",
+          "Error encountered in axios call in fetcher.tech, error:",
           err
         );
       });

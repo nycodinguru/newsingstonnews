@@ -1,0 +1,115 @@
+.Login-container {
+    opacity: 0;
+    height: 120vh;
+    width: 100vw;
+    position: fixed;
+    background: rgba(255, 255, 255, 0.85);
+    margin-top: -120px;
+    z-index: -10000;
+    transition: all 0.3s;
+
+    &.active {
+        transition: all 0.5s;
+        opacity: 1 !important; 
+    }
+
+    h3 {
+        color: white;
+        text-align: center;
+        font-size: 3rem;
+        line-height: 10rem;
+        margin: 0 auto;
+        width: max-content;
+
+        @include mobile {
+            padding-top: 20vh;
+        }
+    }
+
+    .Login-div {
+        width: 350px;
+        height: 440px;
+        background: black;
+        margin: 200px auto;
+        box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.7);
+
+        @include mobile {
+            width: 100vw;
+            height: 100vh;
+            margin: 71px auto;
+        }
+
+        .Close-button {
+            height: 30px;
+            width: 30px;
+            position: relative;
+            float: right;
+            top: 3px;
+            right: 3px;
+            font-size: 1rem;
+            background-image: url('../assets/x.png');
+            filter: invert(100);
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            transition: 0.4s;
+    
+            &:hover {
+                transform: rotate(180deg);
+                transition: 0.4s;
+            }
+        }
+    }
+
+    form {
+        position: relative;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        border: 1px white solid;
+        width: 50%;
+        margin: 0 auto;
+        position: relative;
+        padding: 6px;
+        font-size: 1rem;
+        font-family: "Archivo Narrow", sans-serif;    
+    }
+
+    .password-input {
+        margin-top: 10px;
+    }
+
+    .sign-up-link {
+        color: #cbf960;
+        text-align: center;
+        margin: 22px 0;
+        font-size: 1rem;
+        font-family: "Archivo Narrow", sans-serif;  
+    }
+
+    button {
+        width: max-content;
+        padding: 8px 12px;
+        background-color: black;
+        margin: 20px auto;
+        font-weight: bold;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border: none;
+        border: solid white;
+        color: white;
+        border-width: 4px;
+        
+    &:hover {
+        background-color: $newsington-green;
+        border-color: $newsington-green;
+        transition: all 0.4s;
+        color: white;
+        text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+    }
+
+    }
+}

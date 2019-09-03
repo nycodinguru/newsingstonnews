@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    &:focus, &:focus{
+    outline: none;
+}
+}
+
+input:focus {
+    border-color: $newsington-green !important;
+}
+
+#root {
+    height: max-content;
+}
+
+p {
+    @extend .open-sans
+}
+
+a {
+    cursor: pointer;
+    &:link,
+    &:hover,
+    &:visited {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    }
+}
+ul {
+    li {
+    list-style: none;
+    }
+}
+
+body {
+    height: 100%;
+    width: 100vw;
+
+    &.active > :not(:first-child) {
+        filter: blur(4px);
+    }
+
+    &.active {
+        overflow: hidden;
+    }
+}
+
+h1,
+h2,
+h3,
+h4{
+    cursor: default;
+    @extend .archivo-narrow;
+}
+
+.Container {
+    min-height: calc(100vh - 390px);
+}
+
+.collapse-row-column {
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+    flex-direction: column;
+    }
+
+    @include tablet {
+    flex-direction: row;
+    }
+
+    @include tabtop {
+    flex-direction: row;
+    }
+    
+    @include desktop {
+    flex-direction: row;
+    }
+    
+}
+
+.button {
+    @extend .archivo-narrow;
+}
+
+.button:hover {
+    background-color: $newsington-green;
+    border-color: $newsington-green !important;
+    transition: all 0.4s;
+    color: white;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+}
+    
+    
+  

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "dev": "nodemon -e html,css,js index.js"
+    "dev": "nodemon -e html,css,js index.js",
+    "scss": "node-sass --watch ./public/scss -o ./public/css"
   },
   "engines": {
     "node": "9.5.0"
@@ -26,6 +27,7 @@
     "morgan": "^1.9.0",
     "mustache-express": "^1.2.5",
     "newsapi": "^2.1.0",
+    "node-sass": "^4.12.0",
     "nodemon": "^1.17.2",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
